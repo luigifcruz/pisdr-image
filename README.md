@@ -7,7 +7,7 @@ The mirror list can be found in the table below. We recommend using [balenaEtche
 
 | Status | CDN | ZIP | TAR | BitTorrent | 
 |--------|-----|-----|-----|------------|
-| Official (Preferred) | Digital Ocean NYC | [v2](http://rosetta.luigifreitas.me/public/pisdr/v2.0/pisdr_v2.tar.xz) | [v2](http://rosetta.luigifreitas.me/public/pisdr/v2.0/pisdr_v2.fixed.zip) | [v2](http://rosetta.luigifreitas.me/public/pisdr/v2.0/pisdr_v2.fixed.torrent) | 
+| Official | Digital Ocean NYC | [v2](https://cdn.luigifreitas.me/pisdr_v2.tar.xz) | [v2](https://cdn.luigifreitas.me/pisdr_v2.fixed.zip) | | 
 | [Collaborator](https://twitter.com/w4www_brian/status/1111335136929464320) | AWS US-East | [v2](http://w4www.s3-us-east-2.amazonaws.com/pu4spy-pisdr/v2.0/pisdr_v2.tar.xz) | [v2](http://w4www.s3-us-east-2.amazonaws.com/pu4spy-pisdr/v2.0/pisdr_v2.fixed.zip) | |
 
 ## Included Software
