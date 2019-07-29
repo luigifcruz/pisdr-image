@@ -7,7 +7,7 @@ The mirror list can be found in the table below. We recommend using [balenaEtche
 
 | Status | Location | TAR | ZIP | BitTorrent | 
 |--------|-----|-----|-----|------------|
-| Official | NYC | [v2](http://athena.luigifreitas.me/public/pisdr/v2.0/pisdr_v2.tar.xz) | [v2](http://athena.luigifreitas.me/public/pisdr/v2.0/pisdr_v2.fixed.zip) | | 
+| Official | NYC | [v2](https://athena.luigifreitas.me/public/pisdr/v2.0/pisdr_v2.tar.xz) [v2.1](https://athena.luigifreitas.me/public/pisdr/v2.1/pisdr_v2.1.tar.xz) | [v2](https://athena.luigifreitas.me/public/pisdr/v2.0/pisdr_v2.fixed.zip) [v2.1](https://athena.luigifreitas.me/public/pisdr/v2.1/pisdr_v2.1.zip) | | 
 | [Collaborator](https://twitter.com/w4www_brian/status/1111335136929464320) | US-East | [v2](http://w4www.s3-us-east-2.amazonaws.com/pu4spy-pisdr/v2.0/pisdr_v2.tar.xz) | [v2](http://w4www.s3-us-east-2.amazonaws.com/pu4spy-pisdr/v2.0/pisdr_v2.fixed.zip) | |
 | [Collaborator](https://twitter.com/sam210723/status/1131846681916370945) | Singapore | [v2](https://vksdr.sgp1.digitaloceanspaces.com/PiSDR/pisdr_v2.tar.xz) | [v2](https://vksdr.sgp1.digitaloceanspaces.com/PiSDR/pisdr_v2.fixed.zip) | |
 
@@ -20,6 +20,8 @@ The mirror list can be found in the table below. We recommend using [balenaEtche
 - Soapy
 
 ## Supported Devices
+- PlutoSDR
+- LimeNET Micro
 - LimeSDR Mini
 - LimeSDR USB
 - AirSpy Mini
