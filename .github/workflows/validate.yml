@@ -1,0 +1,28 @@
+on: ['pull_request']
+
+name: Build & Validate Image
+
+jobs:
+  build:
+    name: Build & Validate Image
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./builder
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build project
+        id: builder
+        working-directory: ${{ env.working-directory }} 
+        run: |
+          bash build-docker.sh
+          echo ::set-output name=filename::$(ls deploy/*.zip | xargs -n 1 basename)
+      - name: Fix Permissions
+        id: fix_perm_filename
+        run: |
+          chmod a+rw ${{ env.working-directory }}/deploy/${{ steps.builder.outputs.filename }}
+          echo ${{ env.working-directory }}/deploy/${{ steps.builder.outputs.filename }}
+      - uses: actions/upload-artifact@v1
+        with:
+          name: ${{ steps.builder.outputs.filename }}
+          path: ${{ env.working-directory }}/deploy/${{ steps.builder.outputs.filename }}

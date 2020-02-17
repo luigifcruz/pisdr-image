@@ -1,0 +1,5 @@
+output/
+work/
+deploy/
+apt-cacher-ng/
+.git/objects/*
