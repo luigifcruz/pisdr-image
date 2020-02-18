@@ -25,14 +25,15 @@ This is a single person project with limited time and resources to acquire expen
 
 ### Software 
 List of pre-installed software: SDR Angel, Soapy Remote, GQRX, GNURadio, LimeUtil, and LimeVNA.
-#### Learn more [Pre-Installed Software](https://pisdr.luigifreitas.me/docs/software/software/index).
+#### Learn more [Pre-Installed Software](https://pisdr.luigifreitas.me/docs/software/software.html).
 
 ### Radios
 We currently support the following SDRs: RTL-SDR, LimeSDR, PlutoSDR, Airspy, and Airspy HF.
-#### Learn more [Supported Radios](https://pisdr.luigifreitas.me/docs/radios/radios/index).
+#### Learn more [Supported Radios](https://pisdr.luigifreitas.me/docs/radios/radios.html).
  
 ### Computers
 The latest version of the PiSDR (v3.0) supports every Raspberry Pi model (Zero, 1, 2, 3 and 4).
+#### Learn more [Supported boards](https://pisdr.luigifreitas.me/docs/computers/computers.html).
 
 ---
 
