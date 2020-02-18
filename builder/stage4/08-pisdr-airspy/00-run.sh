@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 on_chroot << EOF
-mkdir -p    "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/Airspy"
-cd 		    "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/Airspy"
+mkdir -p    "/home/${FIRST_USER_NAME}/Airspy"
+cd 		    "/home/${FIRST_USER_NAME}/Airspy"
 
 if [ ! -d "airspyone_host" ]; then
     git clone https://github.com/airspy/airspyone_host.git
@@ -14,7 +14,6 @@ mkdir -p build
 cd build
 rm -rf CMakeCache.txt
 cmake ../ -DINSTALL_UDEV_RULES=ON
-make -j$(nproc)
-make install
+make -j$(nproc) install
 ldconfig
 EOF

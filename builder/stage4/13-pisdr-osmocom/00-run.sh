@@ -4,13 +4,13 @@ on_chroot << EOF
 mkdir -p    "/home/${FIRST_USER_NAME}/Software"
 cd 		    "/home/${FIRST_USER_NAME}/Software"
 
-if [ ! -d "cm256cc" ]; then
-    git clone https://github.com/f4exb/cm256cc.git
+if [ ! -d "gr-osmosdr" ]; then
+    git clone git://git.osmocom.org/gr-osmosdr
 fi
 
-cd cm256cc
+cd gr-osmosdr
 git pull
-git reset --hard f21e8bc1e9afdb0b28672743dcec111aec1d32d9
+git checkout gr3.7
 mkdir -p build
 cd build
 rm -rf CMakeCache.txt

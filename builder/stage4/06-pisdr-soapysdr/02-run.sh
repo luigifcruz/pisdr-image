@@ -1,8 +1,8 @@
 #!/bin/bash
 
 on_chroot << EOF
-mkdir -p 	"${ROOTFS_DIR}/home/${FIRST_USER_NAME}/Packages"
-cd 	    	"${ROOTFS_DIR}/home/${FIRST_USER_NAME}/Packages"
+mkdir -p 	"/home/${FIRST_USER_NAME}/Packages"
+cd 	    	"/home/${FIRST_USER_NAME}/Packages"
 
 if [ ! -d "SoapyRemote" ]; then
     git clone https://github.com/pothosware/SoapyRemote.git
@@ -14,7 +14,6 @@ mkdir -p build
 cd build
 rm -rf CMakeCache.txt
 cmake ../
-make -j$(nproc)
-make install
+make -j$(nproc) install
 ldconfig
 EOF
