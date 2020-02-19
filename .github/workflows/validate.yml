@@ -5,7 +5,7 @@ name: Build & Validate Image
 jobs:
   build:
     name: Build & Validate Image
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 2880
     env:
       working-directory: ./builder

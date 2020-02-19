@@ -8,7 +8,7 @@ name: Build & Deploy Image
 jobs:
   build:
     name: Build & Release Image
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 2880
     env:
       working-directory: ./builder
