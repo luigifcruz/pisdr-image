@@ -19,7 +19,7 @@ jobs:
         id: builder
         working-directory: ${{ env.working-directory }} 
         run: |
-          bash build-docker.sh
+          PRESERVE_CONTAINER=1 bash build-docker.sh
           echo ::set-output name=filename::$(ls deploy/*.tar.xz | xargs -n 1 basename)
       - name: Fix Permissions
         id: fix_perm_filename
@@ -45,4 +45,8 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
           asset_path: ${{ env.working-directory }}/deploy/${{ steps.builder.outputs.filename }}
           asset_name: ${{ steps.builder.outputs.filename }}
-          asset_content_type: application/zip
+          asset_content_type: application/x-tar
+      - name: Delete Image
+        id: delete_image
+        run: |
+          rm ${{ env.working-directory }}/deploy/${{ steps.builder.outputs.filename }}

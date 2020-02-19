@@ -12,7 +12,7 @@ cd LimeSuite
 git pull
 mkdir -p build
 cd build
-cmake -DCMAKE_CXX_LINK_FLAGS="$(DCMAKE_CXX_LINK_FLAGS) -latomic" ../
+cmake -DCMAKE_CXX_FLAGS=-latomic ../
 make -j$(nproc) install
 ldconfig
 

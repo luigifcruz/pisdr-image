@@ -12,7 +12,7 @@ cd gr-limesdr
 git pull
 mkdir -p build
 cd build
-cmake ../
+cmake -DCMAKE_CXX_FLAGS=-latomic ../
 make -j$(nproc) install
 ldconfig
 EOF
