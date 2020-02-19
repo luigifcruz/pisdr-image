@@ -18,8 +18,10 @@ jobs:
       - name: Build project
         id: builder
         working-directory: ${{ env.working-directory }} 
+        env:
+          PRESERVE_CONTAINER: 1
         run: |
-          PRESERVE_CONTAINER=1 bash build-docker.sh
+          bash build-docker.sh
           echo ::set-output name=filename::$(ls deploy/*.tar.xz | xargs -n 1 basename)
       - name: Fix Permissions
         id: fix_perm_filename
