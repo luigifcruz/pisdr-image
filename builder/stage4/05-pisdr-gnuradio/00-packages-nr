@@ -13,6 +13,9 @@ libqwt-dev
 libsdl1.2-dev
 libusb-1.0-0-dev
 pkg-config
+libasound2-dev
+pulseaudio
+libjack-dev
 python-wxgtk3.0
 python-qt4
 python-gtk2

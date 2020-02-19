@@ -4,16 +4,14 @@ on_chroot << EOF
 mkdir -p    "/home/${FIRST_USER_NAME}/Software"
 cd 		    "/home/${FIRST_USER_NAME}/Software"
 
-if [ ! -d "gr-osmosdr" ]; then
-    git clone git://git.osmocom.org/gr-osmosdr
+if [ ! -d "gqrx" ]; then
+    git clone https://github.com/csete/gqrx.git
 fi
 
-cd gr-osmosdr
+cd gqrx
 git pull
-git checkout gr3.7
 mkdir -p build
 cd build
-rm -rf CMakeCache.txt
 cmake ../
 make -j$(nproc) install
 ldconfig

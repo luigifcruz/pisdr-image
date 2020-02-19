@@ -13,7 +13,6 @@ git pull
 git reset --hard "v1.8.6"
 mkdir -p build
 cd build
-rm -rf CMakeCache.txt
 cmake -DUSE_MBELIB=ON  ../
 make -j$(nproc) install
 ldconfig

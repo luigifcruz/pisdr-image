@@ -12,7 +12,6 @@ cd airspyhf
 git pull
 mkdir -p build
 cd build
-rm -rf CMakeCache.txt
 cmake ../ -DINSTALL_UDEV_RULES=ON
 make -j$(nproc) install
 ldconfig

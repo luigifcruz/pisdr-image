@@ -12,7 +12,6 @@ cd SoapyPlutoSDR
 git pull
 mkdir -p build
 cd build
-rm -rf CMakeCache.txt
 cmake -DCMAKE_CXX_FLAGS=-latomic ../
 make -j$(nproc) install
 ldconfig

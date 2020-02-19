@@ -4,16 +4,15 @@ on_chroot << EOF
 mkdir -p    "/home/${FIRST_USER_NAME}/Software"
 cd 		    "/home/${FIRST_USER_NAME}/Software"
 
-if [ ! -d "cm256cc" ]; then
-    git clone https://github.com/f4exb/cm256cc.git
+if [ ! -d "mbelib" ]; then
+    git clone https://github.com/szechyjs/mbelib.git
 fi
 
-cd cm256cc
+cd mbelib
 git pull
-git reset --hard f21e8bc1e9afdb0b28672743dcec111aec1d32d9
+git reset --hard 9a04ed5c78176a9965f3d43f7aa1b1f5330e771f
 mkdir -p build
 cd build
-rm -rf CMakeCache.txt
 cmake ../
 make -j$(nproc) install
 ldconfig

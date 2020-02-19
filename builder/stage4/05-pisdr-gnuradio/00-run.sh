@@ -13,7 +13,6 @@ git pull
 git checkout maint-3.7
 mkdir -p build
 cd build
-rm -rf CMakeCache.txt
 cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python ../
 make -j$(nproc) install
 ldconfig

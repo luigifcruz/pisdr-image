@@ -12,7 +12,6 @@ cd rtl-sdr
 git pull
 mkdir -p build
 cd build
-rm -rf CMakeCache.txt
 cmake ../ -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON
 make -j$(nproc) install
 ldconfig

@@ -6,6 +6,7 @@ jobs:
   build:
     name: Build & Validate Image
     runs-on: ubuntu-latest
+    timeout-minutes: 2880
     env:
       working-directory: ./builder
     steps:
@@ -16,7 +17,7 @@ jobs:
         working-directory: ${{ env.working-directory }} 
         run: |
           bash build-docker.sh
-          echo ::set-output name=filename::$(ls deploy/*.zip | xargs -n 1 basename)
+          echo ::set-output name=filename::$(ls deploy/*.tar.xz | xargs -n 1 basename)
       - name: Fix Permissions
         id: fix_perm_filename
         run: |

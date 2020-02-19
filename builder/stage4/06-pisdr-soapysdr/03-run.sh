@@ -10,9 +10,9 @@ fi
 
 cd gr-soapy
 git pull
+git checkout maint-3.7
 mkdir -p build
 cd build
-rm -rf CMakeCache.txt
 cmake ../
 make -j$(nproc) install
 ldconfig
