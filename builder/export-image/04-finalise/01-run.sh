@@ -94,6 +94,7 @@ if [ "${DEPLOY_ZIP}" == "1" ]; then
 	tar -cJf "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.tar.xz" \
 		"$(basename "${IMG_FILE}")"
 	popd > /dev/null
+	rm -f "${DEPLOY_DIR}/${IMG_FILENAME}${IMG_SUFFIX}.img"
 else
 	cp "$IMG_FILE" "$DEPLOY_DIR"
 fi
