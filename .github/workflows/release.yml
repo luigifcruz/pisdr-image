@@ -13,6 +13,11 @@ jobs:
     env:
       working-directory: ./builder
     steps:
+      - name: Clean project
+        id: clean
+        working-directory: ${{ env.working-directory }} 
+        run: |
+          sudo rm -fr work deploy
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Build project
