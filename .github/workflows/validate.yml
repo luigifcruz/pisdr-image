@@ -16,7 +16,6 @@ jobs:
         id: builder
         working-directory: ${{ env.working-directory }} 
         run: |
-          docker rm -v pigen_work
           bash build-docker.sh
           echo ::set-output name=filename::$(ls deploy/*.tar.xz | xargs -n 1 basename)
       - name: Fix Permissions
