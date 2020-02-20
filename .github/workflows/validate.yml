@@ -16,7 +16,7 @@ jobs:
         id: builder
         working-directory: ${{ env.working-directory }} 
         env:
-          - CONTINUE: 1
+          CONTINUE: 1
         run: |
           bash build-docker.sh
           echo ::set-output name=filename::$(ls deploy/*.tar.xz | xargs -n 1 basename)
