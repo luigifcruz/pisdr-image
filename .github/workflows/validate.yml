@@ -10,18 +10,13 @@ jobs:
     env:
       working-directory: ./builder
     steps:
-      - name: Clean project
-        id: clean
-        working-directory: ${{ env.working-directory }} 
-        run: |
-          sudo rm -fr work deploy
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Build project
         id: builder
         working-directory: ${{ env.working-directory }} 
         run: |
-          sudo bash build.sh
+          bash build-docker.sh
           echo ::set-output name=filename::$(ls deploy/*.tar.xz | xargs -n 1 basename)
       - name: Fix Permissions
         id: fix_perm_filename
