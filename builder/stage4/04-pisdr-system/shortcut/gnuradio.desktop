@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=GNURadio Companion
+Comment=GNURadio
+Icon=/home/pi/GNURadio/gnuradio/grc/scripts/freedesktop/gnuradio_logo_icon-square.svg
+Exec=gnuradio-companion 
+Type=Application
+Encoding=UTF-8
+Terminal=true
+Categories=None;

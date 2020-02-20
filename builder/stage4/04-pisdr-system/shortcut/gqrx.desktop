@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=GQRX
+Comment=GQRX
+Icon=/home/pi/Software/gqrx/new_logo/SVG/icon color.svg
+Exec=gqrx 
+Type=Application
+Encoding=UTF-8
+Terminal=true
+Categories=None;

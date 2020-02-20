@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 on_chroot << EOF
-mkdir -p 	"/home/${FIRST_USER_NAME}/LimeSDR"
-cd 		    "/home/${FIRST_USER_NAME}/LimeSDR"
+mkdir -p 	"/home/${FIRST_USER_NAME}/GNURadio"
+cd 		    "/home/${FIRST_USER_NAME}/GNURadio"
 
 if [ ! -d "gnuradio" ]; then
     git clone --recursive https://github.com/gnuradio/gnuradio.git
