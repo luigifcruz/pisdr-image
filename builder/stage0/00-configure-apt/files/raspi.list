@@ -1,3 +1,4 @@
-deb rsync://mirrors.ocf.berkeley.edu/raspbian/raspbian buster main
+deb http://www.mirrorservice.org/sites/archive.raspbian.org/raspbian
+f buster main
 # Uncomment line below then 'apt-get update' to enable 'apt-get source'
 #deb-src http://archive.raspberrypi.org/debian/ buster main
