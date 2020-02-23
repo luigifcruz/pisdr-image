@@ -1,8 +1,8 @@
 #!/bin/bash
 
 on_chroot << EOF
-mkdir -p 	"/home/${FIRST_USER_NAME}/Packages"
-cd 	    	"/home/${FIRST_USER_NAME}/Packages"
+mkdir -p 	"/home/${FIRST_USER_NAME}/PiSDR/Software"
+cd 	    	"/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "SoapySDR" ]; then
     git clone https://github.com/pothosware/SoapySDR.git

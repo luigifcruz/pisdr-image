@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 on_chroot << EOF
-mkdir -p    "/home/${FIRST_USER_NAME}/RTLSDR"
-cd 		    "/home/${FIRST_USER_NAME}/RTLSDR"
+mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
+cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 
 if [ ! -d "rtl-sdr" ]; then
     git clone https://github.com/osmocom/rtl-sdr

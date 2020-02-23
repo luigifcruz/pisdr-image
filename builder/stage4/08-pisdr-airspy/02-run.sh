@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 on_chroot << EOF
-mkdir -p    "/home/${FIRST_USER_NAME}/Airspy"
-cd 		    "/home/${FIRST_USER_NAME}/Airspy"
+mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
+cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 
 if [ ! -d "SoapyAirspy" ]; then
     git clone https://github.com/pothosware/SoapyAirspy.git

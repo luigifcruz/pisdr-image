@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 on_chroot << EOF
-mkdir -p    "/home/${FIRST_USER_NAME}/Software"
-cd 		    "/home/${FIRST_USER_NAME}/Software"
+mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
+cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "codec2" ]; then
     git clone https://github.com/drowe67/codec2.git

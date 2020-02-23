@@ -12,17 +12,21 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Clean docker
+        id: clean_docker
+        working-directory: ${{ env.working-directory }} 
+        run: |
+          docker system prune -af
+          docker system prune --volumes -f
+          docker container stop $(docker container ls -aq)
+          docker container rm $(docker container ls -aq)
+          docker image prune -af
       - name: Build project
         id: builder
         working-directory: ${{ env.working-directory }} 
         run: |
           bash build-docker.sh
           echo ::set-output name=filename::$(ls deploy/*.tar.xz | xargs -n 1 basename)
-      - name: Fix Permissions
-        id: fix_perm_filename
-        run: |
-          chmod a+rw ${{ env.working-directory }}/deploy/${{ steps.builder.outputs.filename }}
-          echo ${{ env.working-directory }}/deploy/${{ steps.builder.outputs.filename }}
       - uses: actions/upload-artifact@v1
         with:
           name: ${{ steps.builder.outputs.filename }}
