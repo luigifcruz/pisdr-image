@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=GNURadio Companion
 Comment=GNURadio
-Icon=/home/pi/GNURadio/gnuradio/grc/scripts/freedesktop/gnuradio_logo_icon-square.svg
+Icon=/home/pi/PiSDR/Software/gnuradio/grc/scripts/freedesktop/gnuradio_logo_icon-square.svg
 Exec=gnuradio-companion 
 Type=Application
 Encoding=UTF-8
