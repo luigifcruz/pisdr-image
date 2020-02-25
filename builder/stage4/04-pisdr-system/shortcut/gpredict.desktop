@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=GPredict
+Comment=GPredict
+Icon=/home/pi/PiSDR/Software/gpredict/pixmaps/icons/gpredict-icon.png
+Exec=gpredict 
+Type=Application
+Encoding=UTF-8
+Terminal=true
+Categories=None;
