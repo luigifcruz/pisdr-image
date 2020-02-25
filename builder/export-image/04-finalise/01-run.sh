@@ -86,13 +86,12 @@ unmount_image "${IMG_FILE}"
 
 mkdir -p "${DEPLOY_DIR}"
 
-rm -f "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.tar.xz"
+rm -f "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.img.xz"
 rm -f "${DEPLOY_DIR}/${IMG_FILENAME}${IMG_SUFFIX}.img"
 
 if [ "${DEPLOY_ZIP}" == "1" ]; then
 	pushd "${STAGE_WORK_DIR}" > /dev/null
-	tar -cJf "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.tar.xz" \
-		"$(basename "${IMG_FILE}")"
+	xz -c "$(basename "${IMG_FILE}")" > "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.img.xz"
 	popd > /dev/null
 	rm -f "${DEPLOY_DIR}/${IMG_FILENAME}${IMG_SUFFIX}.img"
 else
