@@ -1,9 +1,9 @@
 #!/bin/bash -e
 
-on_chroot << EOF
-mkdir -p "/home/${FIRST_USER_NAME}/PiSDR"
-ln -sf "/home/${FIRST_USER_NAME}/PiSDR" PiSDR
+install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/"
+install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Software"
+install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Radios/"
 
-mkdir -p "/home/${FIRST_USER_NAME}/PiSDR/Software"
-mkdir -p "/home/${FIRST_USER_NAME}/PiSDR/Radios"
+on_chroot << EOF
+ln -sf "/home/${FIRST_USER_NAME}/PiSDR" "/home/${FIRST_USER_NAME}/Desktop/PiSDR"
 EOF
