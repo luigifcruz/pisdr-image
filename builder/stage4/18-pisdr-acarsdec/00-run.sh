@@ -9,7 +9,6 @@ if [ ! -d "acarsdec" ]; then
 fi
 
 cd acarsdec
-git pull
 mkdir -p build
 cd build
 cmake ../

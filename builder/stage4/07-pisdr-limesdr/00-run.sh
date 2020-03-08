@@ -9,7 +9,6 @@ if [ ! -d "LimeSuite" ]; then
 fi
 
 cd LimeSuite
-git pull
 mkdir -p build
 cd build
 cmake -DCMAKE_CXX_FLAGS=-latomic ../

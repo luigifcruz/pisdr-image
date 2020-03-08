@@ -9,7 +9,6 @@ if [ ! -d "gqrx" ]; then
 fi
 
 cd gqrx
-git pull
 mkdir -p build
 cd build
 cmake ../

@@ -4,16 +4,15 @@ on_chroot << EOF
 mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
-if [ ! -d "dsdcc" ]; then
-    git clone https://github.com/f4exb/dsdcc.git
+if [ ! -d "cm256cc" ]; then
+    git clone https://github.com/f4exb/cm256cc.git
 fi
 
-cd dsdcc
-git pull
-git reset --hard "v1.8.6"
+cd cm256cc
+git reset --hard f21e8bc1e9afdb0b28672743dcec111aec1d32d9
 mkdir -p build
 cd build
-cmake -DUSE_MBELIB=ON  ../
+cmake ../
 make -j$(nproc) install
 ldconfig
 EOF

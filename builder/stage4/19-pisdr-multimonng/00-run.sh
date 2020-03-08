@@ -9,7 +9,6 @@ if [ ! -d "multimon-ng" ]; then
 fi
 
 cd multimon-ng
-git pull
 mkdir -p build
 cd build
 cmake ../

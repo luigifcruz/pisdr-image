@@ -9,7 +9,6 @@ if [ ! -d "gnuradio" ]; then
 fi
 
 cd gnuradio
-git pull
 git checkout maint-3.7
 mkdir -p build
 cd build

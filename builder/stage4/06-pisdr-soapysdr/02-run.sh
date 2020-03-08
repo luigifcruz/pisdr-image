@@ -9,7 +9,6 @@ if [ ! -d "SoapyRemote" ]; then
 fi
 
 cd SoapyRemote
-git pull
 mkdir -p build
 cd build
 cmake ../

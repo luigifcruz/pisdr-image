@@ -9,7 +9,6 @@ if [ ! -d "airspyhf" ]; then
 fi
 
 cd airspyhf
-git pull
 mkdir -p build
 cd build
 cmake ../ -DINSTALL_UDEV_RULES=ON

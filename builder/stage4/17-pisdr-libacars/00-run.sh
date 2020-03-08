@@ -9,7 +9,6 @@ if [ ! -d "libacars" ]; then
 fi
 
 cd libacars
-git pull
 mkdir -p build
 cd build
 cmake ../

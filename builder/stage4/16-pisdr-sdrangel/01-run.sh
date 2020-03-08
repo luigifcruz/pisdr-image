@@ -4,13 +4,12 @@ on_chroot << EOF
 mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
-if [ ! -d "gr-osmosdr" ]; then
-    git clone git://git.osmocom.org/gr-osmosdr
+if [ ! -d "mbelib" ]; then
+    git clone https://github.com/szechyjs/mbelib.git
 fi
 
-cd gr-osmosdr
-git pull
-git checkout gr3.7
+cd mbelib
+git reset --hard 9a04ed5c78176a9965f3d43f7aa1b1f5330e771f
 mkdir -p build
 cd build
 cmake ../

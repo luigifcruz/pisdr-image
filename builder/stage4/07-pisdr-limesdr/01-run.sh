@@ -9,7 +9,6 @@ if [ ! -d "gr-limesdr" ]; then
 fi
 
 cd gr-limesdr
-git pull
 mkdir -p build
 cd build
 cmake -DCMAKE_CXX_FLAGS=-latomic ../

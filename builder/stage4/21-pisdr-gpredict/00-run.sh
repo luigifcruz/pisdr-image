@@ -9,7 +9,6 @@ if [ ! -d "gpredict" ]; then
 fi
 
 cd gpredict
-git pull
 bash autogen.sh
 make -j$(nproc) install
 ldconfig

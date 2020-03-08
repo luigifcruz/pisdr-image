@@ -9,7 +9,6 @@ if [ ! -d "sdrangel" ]; then
 fi
 
 cd sdrangel
-git pull
 mkdir -p build
 cd build
 cmake ../

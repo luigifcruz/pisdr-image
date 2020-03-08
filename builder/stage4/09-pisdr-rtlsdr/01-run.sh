@@ -9,7 +9,6 @@ if [ ! -d "SoapyRTLSDR" ]; then
 fi
 
 cd SoapyRTLSDR
-git pull
 mkdir -p build
 cd build
 cmake -DCMAKE_CXX_FLAGS=-latomic ../

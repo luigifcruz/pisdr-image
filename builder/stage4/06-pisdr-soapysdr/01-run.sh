@@ -9,7 +9,6 @@ if [ ! -d "SoapySDR" ]; then
 fi
 
 cd SoapySDR
-git pull
 mkdir -p build
 cd build
 cmake ../

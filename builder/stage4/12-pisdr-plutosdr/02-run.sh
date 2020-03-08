@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 on_chroot << EOF
-mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
-cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
+mkdir -p    "/home/${FIRST_USER_NAME}/PlutoSDR"
+cd 		    "/home/${FIRST_USER_NAME}/PlutoSDR"
 
 if [ ! -d "gr-iio" ]; then
     git clone https://github.com/analogdevicesinc/gr-iio

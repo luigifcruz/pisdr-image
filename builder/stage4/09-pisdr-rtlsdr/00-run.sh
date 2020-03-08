@@ -9,7 +9,6 @@ if [ ! -d "rtl-sdr" ]; then
 fi
 
 cd rtl-sdr
-git pull
 mkdir -p build
 cd build
 cmake ../ -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON

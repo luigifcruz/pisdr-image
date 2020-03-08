@@ -9,7 +9,6 @@ if [ ! -d "gr-soapy" ]; then
 fi
 
 cd gr-soapy
-git pull
 git checkout maint-3.7
 mkdir -p build
 cd build

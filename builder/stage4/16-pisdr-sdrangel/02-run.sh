@@ -4,13 +4,12 @@ on_chroot << EOF
 mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
-if [ ! -d "mbelib" ]; then
-    git clone https://github.com/szechyjs/mbelib.git
+if [ ! -d "serialDV" ]; then
+    git clone https://github.com/f4exb/serialDV.git
 fi
 
-cd mbelib
-git pull
-git reset --hard 9a04ed5c78176a9965f3d43f7aa1b1f5330e771f
+cd serialDV
+git reset --hard "v1.1.4"
 mkdir -p build
 cd build
 cmake ../

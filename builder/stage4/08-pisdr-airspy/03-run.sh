@@ -9,7 +9,6 @@ if [ ! -d "SoapyAirspyHF" ]; then
 fi
 
 cd SoapyAirspyHF
-git pull
 mkdir -p build
 cd build
 cmake -DCMAKE_CXX_FLAGS=-latomic ../

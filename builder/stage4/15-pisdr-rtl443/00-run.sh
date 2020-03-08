@@ -9,7 +9,6 @@ if [ ! -d "rtl_433" ]; then
 fi
 
 cd rtl_433
-git pull
 mkdir -p build
 cd build
 cmake ../
