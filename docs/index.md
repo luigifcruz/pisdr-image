@@ -32,7 +32,7 @@ We currently support the following SDRs: RTL-SDR, LimeSDR, PlutoSDR, Airspy, and
 #### Learn more [Supported Radios](https://pisdr.luigifreitas.me/docs/radios/radios.html).
  
 ### Computers
-The latest version of the PiSDR (v3.0) supports every Raspberry Pi model (Zero, 1, 2, 3 and 4).
+The latest version of the PiSDR supports every Raspberry Pi model (Zero, 1, 2, 3 and 4).
 #### Learn more [Supported boards](https://pisdr.luigifreitas.me/docs/computers/computers.html).
 
 ---
@@ -40,26 +40,16 @@ The latest version of the PiSDR (v3.0) supports every Raspberry Pi model (Zero, 
 ## Getting started
 
 ### Download
-Since the download file is quite large, we created a poll of mirrors to ensure the fastest possible download. Click in the button below to be automatically redirected to the fastest mirror for you.
+The download file is hosted on GitHub Releases. Click in the button below to start downloading your latest PiSDR image. No `.xz` extraction is required. Use this file directly with the flashing software.
 
-[Download Torrent (Fastest)](http://bit.ly/37E4js0){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } 
-[Download Web](http://bit.ly/34JASmH){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 } 
-
-#### Download Mirrors
-
-| Status       | Server Location |Version  | TAR | ZIP |
-|:-------------|:----------------|:--|:---|:----|
-| Official | Torrent/Web | 3.0 | [Download](http://bit.ly/37E4js0) | |
-| [Collaborator](https://twitter.com/sam210723) | Edge Deployment | 3.0 | [Download](http://bit.ly/34JASmH) | [Download](http://bit.ly/2Z9ZOCu) |
-| [Collaborator](https://twitter.com/F5OEOEvariste) | Europe | 3.0 | [Download](http://bit.ly/2QaL0zk) | [Download](http://bit.ly/2sR5C84) |
-| [Collaborator](https://twitter.com/w4www_raker) | US-East | 3.0 | [Download](http://bit.ly/39bn4oc) | |
+[Download Latest Image](https://github.com/luigifreitas/pisdr-image/releases/download/v4.0.0/2020-03-08-PiSDR-vanilla.img.xz){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ### Installation
-The installation process is the same as the vanilla Raspbian. You will need a MicroSD card with at least 16GB of capacity. To transfer the image file to the memory card we recommend the open-source and multi-platform [balenaEtcher](https://www.balena.io/etcher/).
+The installation process is the same as the vanilla Raspbian. You will need a MicroSD card with at least 8GB of capacity. To transfer the image file to the memory card we recommend the open-source and multi-platform [balenaEtcher](https://www.balena.io/etcher/) or the official [Raspberry Pi Imager](https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility/).
 
 If you are feeling quite adventurous, you can copy the image to the memory card using `dd`. **Warning:** One should be extremely cautious using `dd`, as with any command of this kind it can destroy data irreversibly.
 ```bash
-$ dd bs=4M if=pisdr_v3.0.img of=/dev/sdX conv=fsync
+$ dd bs=4M if=pisdr.img of=/dev/sdX conv=fsync
 ```
 ### Usage
 This image can be used as a standard Raspbian desktop environment. The HDMI Output, SSH, and Remote VNC are enabled by default. For usage information about any pre-installed software, please refer to our [Software Page](https://pisdr.luigifreitas.me/docs/software/software/index).
@@ -85,7 +75,13 @@ PiSDR Project was created and maintained since 2019 by [Luigi F. Cruz](https://l
 
 ### Donation
 
-Donations are welcome. Hit me up on [Twitter](https://twitter.com/luigifcruz) or [Email](mailto:luigifcruz@gmail.com) if you want to buy me a coffee.
+Donations are welcome. This would help offset the development cost.
+- [Patreon](https://www.patreon.com/luigifcruz)
+- [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TAA65AJMC7498&source=url)
+
+### Support
+
+Feel free to hit me up on [Twitter](https://twitter.com/luigifcruz) or [Email](mailto:luigifcruz@gmail.com) if your question isn't answered by this documentation. If you found a bug, please, report it directly on [GitHub Issues](https://github.com/luigifreitas/pisdr-image/issues).
 
 ### License
 
