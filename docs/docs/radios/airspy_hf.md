@@ -28,6 +28,12 @@ nav_order: 1
 | Crystal         | TCXO (0.5 ppm stable) |
 | Bias-T          | No             |
 
+## Device Fingerprint
+```bash
+$ lsusb
+Bus 003 Device 004: ID 03eb:800c Atmel Corp. Airspy HF+
+```
+
 ## Firmware Sources
 ```
 https://github.com/airspy/airspyhf

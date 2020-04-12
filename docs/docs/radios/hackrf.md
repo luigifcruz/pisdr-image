@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Airspy R2
+title: HackRF
 parent: Radios
-nav_order: 3
+nav_order: 9
 ---
 
-# Airspy R2
+# HackRF One
 {: .no_toc }
 
 ## Table of contents
@@ -20,13 +20,14 @@ nav_order: 3
 
 | Specification   | Value           |
 |:----------------|:----------------|
-| Frequency Range | 24 - 1700 MHz   |
-| Bandwidth       | Up to 10 Msps   |
+| Frequency Range | 1 - 6000 MHz   |
+| Bandwidth       | Up to 20 Msps   |
 | ADC Resolution  | 8-bits          |
 | USB Speed       | 2.0             |
-| TX Mode         | No              |
-| Crystal         | TCXO (0.5 ppm stable) |
-| Bias-T          | Yes             |
+| TX Mode         | Yes             |
+| Duplex          | Half            |
+| Crystal         | 20 ppm          |
+| Bias-T          | No              |
 
 ## Device Fingerprint
 ```bash
@@ -36,7 +37,8 @@ Bus 003 Device 003: ID 1d50:60a1 OpenMoko, Inc. Airspy
 
 ## Firmware Sources
 ```
-https://github.com/airspy/airspyone_host
+https://github.com/mossmann/hackrf.git
+https://github.com/pothosware/SoapyHackRF.git
 ```
 
 ## Supported Software

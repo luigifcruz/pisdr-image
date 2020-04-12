@@ -20,7 +20,7 @@ The PiSDR is a Raspbian based operating system for the Raspberry Pi pre-loaded w
 
 ---
 
-## Support
+## Documentation
 This is a single person project with limited time and resources to acquire expensive SDRs. Only radios validated by tests are supported by this image. This is a limitation to maintain a certain level of quality. If you are a vendor and want your SDR supported by this image, consider donating one unit to the project.
 
 ### Software 
@@ -42,7 +42,7 @@ The latest version of the PiSDR supports every Raspberry Pi model (Zero, 1, 2, 3
 ### Download
 The download file is hosted on GitHub Releases. Click in the button below to start downloading your latest PiSDR image. No `.xz` extraction is required. Use this file directly with the flashing software.
 
-[Download Latest Image](https://github.com/luigifreitas/pisdr-image/releases/download/v4.0.0/2020-03-08-PiSDR-vanilla.img.xz){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Download Latest Image]({{ site.github.latest_release.assets[0].browser_download_url }}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ### Installation
 The installation process is the same as the vanilla Raspbian. You will need a MicroSD card with at least 8GB of capacity. To transfer the image file to the memory card we recommend the open-source and multi-platform [balenaEtcher](https://www.balena.io/etcher/) or the official [Raspberry Pi Imager](https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility/).
