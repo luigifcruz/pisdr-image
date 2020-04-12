@@ -16,7 +16,7 @@ nav_order: 4
 
 ---
 
-Python toolkit to use an LMS based device (LimeSDR Mini or USB) as a Vector Network Analyzer. More information and instructions are provided by the [Github Repository](https://github.com/myriadrf/pyLMS7002Soapy).
+Python toolkit to use an LMS based device (LimeSDR Mini or USB) as a Vector Network Analyzer. Details are provided by the [Github Repository](https://github.com/myriadrf/pyLMS7002Soapy).
 
 ## Sources
 ```
