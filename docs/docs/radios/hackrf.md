@@ -29,12 +29,6 @@ nav_order: 9
 | Crystal         | 20 ppm          |
 | Bias-T          | No              |
 
-## Device Fingerprint
-```bash
-$ lsusb
-Bus 003 Device 003: ID 1d50:60a1 OpenMoko, Inc. Airspy
-```
-
 ## Firmware Sources
 ```
 https://github.com/mossmann/hackrf.git
