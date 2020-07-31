@@ -9,7 +9,7 @@ if [ ! -d "dsdcc" ]; then
 fi
 
 cd dsdcc
-git reset --hard "v1.8.6"
+git reset --hard "v1.9.0"
 mkdir -p build
 cd build
 cmake -DUSE_MBELIB=ON  ../
