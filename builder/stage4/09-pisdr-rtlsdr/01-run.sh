@@ -11,7 +11,7 @@ fi
 cd SoapyRTLSDR
 mkdir -p build
 cd build
-cmake -DCMAKE_CXX_FLAGS=-latomic ../
-make -j$(nproc) install
+cmake -GNinja -DCMAKE_CXX_FLAGS=-latomic ..
+ninja install
 ldconfig
 EOF

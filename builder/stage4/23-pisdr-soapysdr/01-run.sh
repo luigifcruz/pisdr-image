@@ -4,14 +4,14 @@ on_chroot << EOF
 mkdir -p 	"/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 	    	"/home/${FIRST_USER_NAME}/PiSDR/Software"
 
-if [ ! -d "SoapyRemote" ]; then
-    git clone https://github.com/pothosware/SoapyRemote.git
+if [ ! -d "SoapySDR" ]; then
+    git clone https://github.com/pothosware/SoapySDR.git
 fi
 
-cd SoapyRemote
+cd SoapySDR
 mkdir -p build
 cd build
-cmake ../
-make -j$(nproc) install
+cmake -GNinja ..
+ninja install
 ldconfig
 EOF

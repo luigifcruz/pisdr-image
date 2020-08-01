@@ -9,9 +9,10 @@ if [ ! -d "gr-iio" ]; then
 fi
 
 cd gr-iio
+git checkout upgrade-3.8
 mkdir -p build
 cd build
-cmake ../ -DINSTALL_UDEV_RULE=ON
-make -j$(nproc) install
+cmake -GNinja -DINSTALL_UDEV_RULE=ON ..
+ninja install
 ldconfig
 EOF

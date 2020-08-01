@@ -11,7 +11,7 @@ fi
 cd rtl-sdr
 mkdir -p build
 cd build
-cmake ../ -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON
-make -j$(nproc) install
+cmake -GNinja -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON ..
+ninja install
 ldconfig
 EOF

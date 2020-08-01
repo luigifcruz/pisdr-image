@@ -12,7 +12,7 @@ cd mbelib
 git reset --hard 9a04ed5c78176a9965f3d43f7aa1b1f5330e771f
 mkdir -p build
 cd build
-cmake ../
-make -j$(nproc) install
+cmake -GNinja ..
+ninja install
 ldconfig
 EOF

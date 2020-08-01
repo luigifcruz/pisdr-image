@@ -11,7 +11,7 @@ fi
 cd libad9361-iio
 mkdir -p build
 cd build
-cmake ../ -DINSTALL_UDEV_RULE=ON
-make -j$(nproc) install
+cmake -GNinja -DINSTALL_UDEV_RULE=ON ..
+ninja install
 ldconfig
 EOF

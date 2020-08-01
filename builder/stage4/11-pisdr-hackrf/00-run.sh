@@ -11,7 +11,7 @@ fi
 cd hackrf/host
 mkdir -p build
 cd build
-cmake ../ -DINSTALL_UDEV_RULES=ON
-make -j$(nproc) install
+cmake -GNinja -DINSTALL_UDEV_RULES=ON ..
+ninja install
 ldconfig
 EOF

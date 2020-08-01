@@ -1,7 +1,3 @@
-git
-cmake
-g++
-pkg-config
 autoconf
 automake
 libtool

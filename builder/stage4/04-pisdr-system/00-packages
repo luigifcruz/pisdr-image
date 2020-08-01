@@ -1,2 +1,7 @@
 vim
 tmux
+cmake
+build-essential
+git
+pkg-config
+re2c

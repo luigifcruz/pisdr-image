@@ -12,7 +12,7 @@ cd serialDV
 git reset --hard "v1.1.4"
 mkdir -p build
 cd build
-cmake ../
-make -j$(nproc) install
+cmake -GNinja ..
+ninja install
 ldconfig
 EOF

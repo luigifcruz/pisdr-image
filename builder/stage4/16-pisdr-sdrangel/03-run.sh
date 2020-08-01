@@ -12,7 +12,7 @@ cd dsdcc
 git reset --hard "v1.9.0"
 mkdir -p build
 cd build
-cmake -DUSE_MBELIB=ON  ../
-make -j$(nproc) install
+cmake -GNinja -DUSE_MBELIB=ON  ..
+ninja install
 ldconfig
 EOF

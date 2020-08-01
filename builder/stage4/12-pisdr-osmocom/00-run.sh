@@ -9,10 +9,9 @@ if [ ! -d "gr-osmosdr" ]; then
 fi
 
 cd gr-osmosdr
-git checkout gr3.7
 mkdir -p build
 cd build
-cmake ../
-make -j$(nproc) install
+cmake -GNinja ..
+ninja install
 ldconfig
 EOF

@@ -11,8 +11,8 @@ fi
 cd LimeSuite
 mkdir -p build
 cd build
-cmake -DCMAKE_CXX_FLAGS=-latomic ../
-make -j$(nproc) install
+cmake -GNinja -DCMAKE_CXX_FLAGS=-latomic ../
+ninja
 ldconfig
 
 cd ../udev-rules

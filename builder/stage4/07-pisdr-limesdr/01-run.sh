@@ -9,9 +9,10 @@ if [ ! -d "gr-limesdr" ]; then
 fi
 
 cd gr-limesdr
+git checkout gr-3.8
 mkdir -p build
 cd build
-cmake -DCMAKE_CXX_FLAGS=-latomic ../
-make -j$(nproc) install
+cmake -GNinja -DCMAKE_CXX_FLAGS=-latomic ../
+ninja
 ldconfig
 EOF

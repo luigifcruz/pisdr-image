@@ -12,7 +12,7 @@ cd cm256cc
 git reset --hard c0e92b92aca3d1d36c990b642b937c64d363c559
 mkdir -p build
 cd build
-cmake ../
-make -j$(nproc) install
+cmake -GNinja ..
+ninja
 ldconfig
 EOF

@@ -11,7 +11,7 @@ fi
 cd acarsdec
 mkdir -p build
 cd build
-cmake ../
-make -j$(nproc) install
+cmake -GNinja ..
+ninja install
 ldconfig
 EOF
