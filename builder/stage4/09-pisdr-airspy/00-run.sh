@@ -12,6 +12,6 @@ cd airspyone_host
 mkdir -p build
 cd build
 cmake -GNinja -DINSTALL_UDEV_RULES=ON ..
-ninja
+ninja install
 ldconfig
 EOF

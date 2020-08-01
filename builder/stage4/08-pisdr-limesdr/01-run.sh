@@ -12,7 +12,7 @@ cd gr-limesdr
 git checkout gr-3.8
 mkdir -p build
 cd build
-cmake -GNinja -DCMAKE_CXX_FLAGS=-latomic ../
-ninja
+cmake -GNinja -DCMAKE_CXX_FLAGS=-latomic ..
+ninja install
 ldconfig
 EOF
