@@ -9,7 +9,7 @@ if [ ! -d "cm256cc" ]; then
 fi
 
 cd cm256cc
-git reset --hard f21e8bc1e9afdb0b28672743dcec111aec1d32d9
+git reset --hard c0e92b92aca3d1d36c990b642b937c64d363c559
 mkdir -p build
 cd build
 cmake ../
