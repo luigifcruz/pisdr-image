@@ -1,4 +1,4 @@
-FROM i386/debian:buster # For the love of god, don't update this.
+FROM i386/debian:buster
 
 ENV DEBIAN_FRONTEND noninteractive
 
