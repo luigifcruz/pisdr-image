@@ -12,7 +12,8 @@ fi
 
 if [ -v WPA_ESSID ] && [ -v WPA_PASSWORD ]; then
 on_chroot <<EOF
-wpa_passphrase "${WPA_ESSID}" "${WPA_PASSWORD}" >> "/etc/wpa_supplicant/wpa_supplicant.conf"
+set -o pipefail
+wpa_passphrase "${WPA_ESSID}" "${WPA_PASSWORD}" | tee -a "/etc/wpa_supplicant/wpa_supplicant.conf"
 EOF
 elif [ -v WPA_ESSID ]; then
 cat >> "${ROOTFS_DIR}/etc/wpa_supplicant/wpa_supplicant.conf" << EOL
@@ -26,5 +27,5 @@ fi
 
 # Disable wifi on 5GHz models
 mkdir -p "${ROOTFS_DIR}/var/lib/systemd/rfkill/"
-echo 1 > "${ROOTFS_DIR}/var/lib/systemd/rfkill/platform-3f300000.mmc:wlan"
-echo 1 > "${ROOTFS_DIR}/var/lib/systemd/rfkill/platform-fe300000.mmc:wlan"
+echo 1 > "${ROOTFS_DIR}/var/lib/systemd/rfkill/platform-3f300000.mmcnr:wlan"
+echo 1 > "${ROOTFS_DIR}/var/lib/systemd/rfkill/platform-fe300000.mmcnr:wlan"
