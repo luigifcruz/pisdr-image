@@ -11,6 +11,7 @@ libsdl1.2-dev
 libusb-1.0-0-dev
 libasound2-dev
 pulseaudio
+libportaudio-dev
 libjack-dev
 libgmp-dev
 libsdl1.2-dev
