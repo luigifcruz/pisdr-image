@@ -9,6 +9,7 @@ if [ ! -d "uhd" ]; then
 fi
 
 cd uhd/host
+git checkout UHD-3.15.LTS
 mkdir -p build
 cd build
 cmake -DCMAKE_CXX_FLAGS:STRING="-march=armv7-a -mfloat-abi=hard -mfpu=neon -mtune=cortex-a15 -Wno-psabi" \
