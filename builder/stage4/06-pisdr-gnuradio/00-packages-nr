@@ -10,6 +10,7 @@ libqwt-dev
 libsdl1.2-dev
 libusb-1.0-0-dev
 libasound2-dev
+libportaudio-dev
 pulseaudio
 libjack-dev
 libgmp-dev
