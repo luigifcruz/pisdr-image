@@ -20,11 +20,13 @@ EOF
 			PACKAGES="$(sed -f "${SCRIPT_DIR}/remove-comments.sed" < "${i}-packages-nr")"
 			if [ -n "$PACKAGES" ]; then
 				on_chroot << EOF
-apt-get -m --ignore-missing --fix-missing install --no-install-recommends -y $PACKAGES || true
-sleep 25
-apt-get -m --ignore-missing --fix-missing install --no-install-recommends -y $PACKAGES || true
-sleep 25
-apt-get --ignore-missing --fix-missing install --no-install-recommends -y $PACKAGES
+n=0
+until [ "$n" -ge 5 ]
+do
+    apt-get --ignore-missing --fix-missing install --no-install-recommends -y $PACKAGES && break
+    n=$((n+1))
+    sleep 15
+done
 EOF
 			fi
 			log "End ${SUB_STAGE_DIR}/${i}-packages-nr"
@@ -34,11 +36,13 @@ EOF
 			PACKAGES="$(sed -f "${SCRIPT_DIR}/remove-comments.sed" < "${i}-packages")"
 			if [ -n "$PACKAGES" ]; then
 				on_chroot << EOF
-apt-get -m --ignore-missing --fix-missing install -y $PACKAGES || true
-sleep 25
-apt-get -m --ignore-missing --fix-missing install -y $PACKAGES || true
-sleep 25
-apt-get --ignore-missing --fix-missing install -y $PACKAGES
+n=0
+until [ "$n" -ge 5 ]
+do
+    apt-get --ignore-missing --fix-missing install -y $PACKAGES && break
+    n=$((n+1))
+    sleep 15
+done
 EOF
 			fi
 			log "End ${SUB_STAGE_DIR}/${i}-packages"
