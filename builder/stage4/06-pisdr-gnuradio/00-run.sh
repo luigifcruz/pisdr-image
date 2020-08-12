@@ -13,9 +13,7 @@ git checkout maint-3.8
 git submodule update --init --recursive
 mkdir -p build
 cd build
-echo "export PYTHONPATH=/usr/local/lib/python3/dist-packages:\$PYTHONPATH" >> /home/${FIRST_USER_NAME}/.bashrc
-cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 ..
+cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
 ninja install
 ldconfig
 EOF
-
