@@ -17,7 +17,7 @@ cmake -DCMAKE_CXX_FLAGS:STRING="-march=armv7-a -mfloat-abi=hard -mfpu=neon -mtun
       -DCMAKE_ASM_FLAGS:STRING="-march=armv7-a -mfloat-abi=hard -mfpu=neon -mtune=cortex-a15" \
       -GNinja -DCMAKE_BUILD_TYPE=Release ../
 ninja install
-cp /usr/lib/uhd/utils/uhd-usrp.rules /etc/udev/rules.d/
+cp /usr/local/lib/uhd/utils/uhd-usrp.rules /etc/udev/rules.d/
 udevadm control --reload-rules
 udevadm trigger
 ldconfig
