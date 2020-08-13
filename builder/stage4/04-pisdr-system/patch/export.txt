@@ -1,0 +1,4 @@
+
+## PiSDR Variables
+export PYTHONPATH="/usr/local/lib/python3/dist-packages:$PYTHONPATH"
+export PATH="$HOME/.local/bin:$PATH"

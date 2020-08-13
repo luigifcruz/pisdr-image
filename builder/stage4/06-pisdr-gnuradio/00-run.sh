@@ -13,7 +13,7 @@ git checkout maint-3.8
 git submodule update --init --recursive
 mkdir -p build
 cd build
-cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
+cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
 ninja install
 ldconfig
 EOF

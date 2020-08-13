@@ -15,7 +15,7 @@ cd build
 cmake -DCMAKE_CXX_FLAGS:STRING="-march=armv7-a -mfloat-abi=hard -mfpu=neon -mtune=cortex-a15 -Wno-psabi" \
       -DCMAKE_C_FLAGS:STRING="-march=armv7-a -mfloat-abi=hard -mfpu=neon -mtune=cortex-a15 -Wno-psabi" \
       -DCMAKE_ASM_FLAGS:STRING="-march=armv7-a -mfloat-abi=hard -mfpu=neon -mtune=cortex-a15" \
-      -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ../
+      -GNinja -DCMAKE_BUILD_TYPE=Release ../
 ninja install
 cp /usr/lib/uhd/utils/uhd-usrp.rules /etc/udev/rules.d/
 udevadm control --reload-rules
