@@ -14,4 +14,6 @@ cd build
 cmake -GNinja -DCMAKE_CXX_FLAGS=-latomic ..
 ninja install
 ldconfig
+cd ..
+rm -fr build
 EOF

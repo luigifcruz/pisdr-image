@@ -16,4 +16,6 @@ cd build
 cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
 ninja install
 ldconfig
+cd ..
+rm -fr build
 EOF

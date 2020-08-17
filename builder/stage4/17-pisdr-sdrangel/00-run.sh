@@ -15,4 +15,6 @@ cd build
 cmake -GNinja ..
 ninja
 ldconfig
+cd ..
+rm -fr build
 EOF

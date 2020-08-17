@@ -15,4 +15,6 @@ cd build
 cmake -GNinja -DUSE_MBELIB=ON  ..
 ninja install
 ldconfig
+cd ..
+rm -fr build
 EOF

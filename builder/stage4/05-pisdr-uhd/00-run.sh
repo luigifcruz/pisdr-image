@@ -20,4 +20,6 @@ ninja install
 cp /usr/local/lib/uhd/utils/uhd-usrp.rules /etc/udev/rules.d/
 ldconfig
 uhd_images_downloader
+cd ..
+rm -fr build
 EOF

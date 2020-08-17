@@ -14,4 +14,6 @@ cd build
 cmake -GNinja -DINSTALL_UDEV_RULE=ON ..
 ninja install
 ldconfig
+cd ..
+rm -fr build
 EOF
