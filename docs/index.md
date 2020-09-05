@@ -33,7 +33,7 @@ We currently support the following SDRs: RTL-SDR, LimeSDR, PlutoSDR, Airspy, and
  
 ### Computers
 The latest version of the PiSDR supports every Raspberry Pi model (Zero, 1, 2, 3 and 4).
-#### Learn more [Supported boards](https://pisdr.luigifreitas.me/docs/computers/computers.html).
+#### Learn more [Supported boards](https://pisdr.luigi.ltd/docs/computers/computers.html).
 
 ---
 
@@ -52,7 +52,7 @@ If you are feeling quite adventurous, you can copy the image to the memory card 
 $ dd bs=4M if=pisdr.img of=/dev/sdX conv=fsync
 ```
 ### Usage
-This image can be used as a standard Raspbian desktop environment. The HDMI Output, SSH, and Remote VNC are enabled by default. For usage information about any pre-installed software, please refer to our [Software Page](https://pisdr.luigifreitas.me/docs/software/software/index).
+This image can be used as a standard Raspbian desktop environment. The HDMI Output, SSH, and Remote VNC are enabled by default. For usage information about any pre-installed software, please refer to our [Software Page](https://pisdr.luigi.ltd/docs/software/software/index).
 
 **Warning: It is important to change the credentials after the first login to ensure your security.**
 
@@ -71,7 +71,7 @@ The remote desktop can be accessed using any VNC client. The credentials are the
 
 ## About the project
 
-PiSDR Project was created and maintained since 2019 by [Luigi F. Cruz](https://luigifreitas.me).
+PiSDR Project was created and maintained since 2019 by [Luigi F. Cruz](https://luigi.ltd).
 
 ### Donation
 
