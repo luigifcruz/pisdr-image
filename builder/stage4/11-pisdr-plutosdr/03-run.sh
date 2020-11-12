@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 
 if [ ! -d "SoapyPlutoSDR" ]; then
-    git clone https://github.com/pothosware/SoapyPlutoSDR.git
+    git clone --depth 1 https://github.com/pothosware/SoapyPlutoSDR.git
 fi
 
 cd SoapyPlutoSDR

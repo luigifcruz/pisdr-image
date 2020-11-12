@@ -5,6 +5,6 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "rpitx" ]; then
-    git clone https://github.com/F5OEO/rpitx.git
+    git clone --depth 1 https://github.com/F5OEO/rpitx.git
 fi
 EOF

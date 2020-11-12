@@ -5,11 +5,10 @@ mkdir -p 	"/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "uhd" ]; then
-    git clone https://github.com/EttusResearch/uhd.git
+    git clone --single-branch --branch UHD-3.15.LTS --depth 1 https://github.com/EttusResearch/uhd.git
 fi
 
 cd uhd/host
-git checkout UHD-3.15.LTS
 mkdir -p build
 cd build
 cmake -DCMAKE_CXX_FLAGS:STRING="-march=armv7-a -mfloat-abi=hard -mfpu=neon -mtune=cortex-a15 -Wno-psabi" \

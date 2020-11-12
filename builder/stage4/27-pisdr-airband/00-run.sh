@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "RTLSDR-Airband" ]; then
-    git clone https://github.com/szpajder/RTLSDR-Airband.git
+    git clone --depth 1 https://github.com/szpajder/RTLSDR-Airband.git
 fi
 
 cd RTLSDR-Airband

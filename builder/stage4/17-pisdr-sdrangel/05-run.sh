@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "sdrangel" ]; then
-    git clone https://github.com/f4exb/sdrangel.git
+    git clone --depth 1 https://github.com/f4exb/sdrangel.git
 fi
 
 cd sdrangel

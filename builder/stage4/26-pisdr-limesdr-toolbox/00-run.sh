@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "limesdr_toolbox" ]; then
-    git clone https://github.com/emvivre/limesdr_toolbox.git
+    git clone --depth 1 https://github.com/emvivre/limesdr_toolbox.git
 fi
 
 cd limesdr_toolbox

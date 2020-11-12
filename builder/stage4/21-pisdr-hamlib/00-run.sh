@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "Hamlib" ]; then
-    git clone https://github.com/Hamlib/Hamlib.git
+    git clone --depth 1 https://github.com/Hamlib/Hamlib.git
 fi
 
 cd Hamlib

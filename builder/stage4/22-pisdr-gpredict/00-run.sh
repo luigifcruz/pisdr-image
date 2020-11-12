@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "gpredict" ]; then
-    git clone https://github.com/csete/gpredict.git
+    git clone --depth 1 https://github.com/csete/gpredict.git
 fi
 
 cd gpredict

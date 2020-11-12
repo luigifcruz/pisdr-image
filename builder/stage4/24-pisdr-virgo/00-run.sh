@@ -5,6 +5,6 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "VIRGO" ]; then
-    git clone https://github.com/0xCoto/VIRGO
+    git clone --depth 1 https://github.com/0xCoto/VIRGO
 fi
 EOF

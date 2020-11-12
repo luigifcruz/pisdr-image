@@ -5,7 +5,7 @@ mkdir -p 	"/home/${FIRST_USER_NAME}/PiSDR/Radios"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 
 if [ ! -d "LimeSuite" ]; then
-    git clone https://github.com/myriadrf/LimeSuite.git
+    git clone --depth 1 https://github.com/myriadrf/LimeSuite.git
 fi
 
 cd LimeSuite

@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "osmo-fl2k" ]; then
-    git clone git://git.osmocom.org/osmo-fl2k.git
+    git clone --depth 1 git://git.osmocom.org/osmo-fl2k.git
 fi
 
 cd osmo-fl2k
