@@ -5,7 +5,7 @@ mkdir -p 	"/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 	    	"/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "gr-soapy" ]; then
-    git clone https://gitlab.com/librespacefoundation/gr-soapy.git
+    git clone --depth 1 https://gitlab.com/librespacefoundation/gr-soapy.git
 fi
 
 cd gr-soapy

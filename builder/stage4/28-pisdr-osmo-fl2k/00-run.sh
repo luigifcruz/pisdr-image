@@ -4,14 +4,14 @@ on_chroot << EOF
 mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
-if [ ! -d "multimon-ng" ]; then
-    git clone --depth 1 https://github.com/EliasOenal/multimon-ng.git
+if [ ! -d "osmo-fl2k" ]; then
+    git clone --depth 1 git://git.osmocom.org/osmo-fl2k.git
 fi
 
-cd multimon-ng
+cd osmo-fl2k
 mkdir -p build
 cd build
-cmake -GNinja ..
+cmake -GNinja -DINSTALL_UDEV_RULES=ON ..
 ninja install
 ldconfig
 cd ..

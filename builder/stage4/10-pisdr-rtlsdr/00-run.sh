@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 
 if [ ! -d "rtl-sdr" ]; then
-    git clone https://github.com/osmocom/rtl-sdr
+    git clone --depth 1 https://github.com/osmocom/rtl-sdr
 fi
 
 cd rtl-sdr

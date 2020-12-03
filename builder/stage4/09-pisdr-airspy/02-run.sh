@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 
 if [ ! -d "SoapyAirspy" ]; then
-    git clone https://github.com/pothosware/SoapyAirspy.git
+    git clone --depth 1 https://github.com/pothosware/SoapyAirspy.git
 fi
 
 cd SoapyAirspy

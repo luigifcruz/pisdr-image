@@ -5,7 +5,7 @@ mkdir -p 	"/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 	    	"/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "SoapySDR" ]; then
-    git clone https://github.com/pothosware/SoapySDR.git
+    git clone --depth 1 https://github.com/pothosware/SoapySDR.git
 fi
 
 cd SoapySDR

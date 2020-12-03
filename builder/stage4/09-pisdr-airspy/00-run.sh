@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 
 if [ ! -d "airspyone_host" ]; then
-    git clone https://github.com/airspy/airspyone_host.git
+    git clone --depth 1 https://github.com/airspy/airspyone_host.git
 fi
 
 cd airspyone_host
