@@ -10,7 +10,7 @@ jobs:
     runs-on: self-hosted
     timeout-minutes: 2880
     env:
-      working-directory: ./builder
+      working-directory: ./
     steps:
       - name: Checkout code
         uses: actions/checkout@v2

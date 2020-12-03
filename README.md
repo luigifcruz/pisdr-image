@@ -54,9 +54,9 @@ We currently support the following SDR:
 ## Getting started
 
 ### Download
-The download file is hosted on GitHub Releases. Click in the button below to start downloading your latest PiSDR image. No `.xz` extraction is required. Use this file directly with the flashing software.
+The download file is hosted on GitHub Releases. Click in the button below to go to the latest release and choose the `.tar.xz` file to start downloading your PiSDR image. No `.xz` extraction is required. Use this file directly with the flashing software.
 
-[Download Latest Image]()
+[Download Latest Image](https://github.com/luigifcruz/pisdr-image/releases/latest)
 
 ### Installation
 The installation process is the same as the vanilla Raspbian. You will need a MicroSD card with at least 8GB of capacity. To transfer the image file to the memory card we recommend the open-source and multi-platform [balenaEtcher](https://www.balena.io/etcher/) or the official [Raspberry Pi Imager](https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility/).
