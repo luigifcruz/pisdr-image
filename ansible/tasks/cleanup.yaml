@@ -1,0 +1,26 @@
+---
+
+- name: Clean apt cache
+  command: apt clean
+  become: yes
+
+- name: Clean build directories
+  ignore_errors: yes
+  shell: |
+    for f in $(cat {{ config_dir }}/build.dirs); do
+      echo "Deleting build dir: $f"
+      rm -r "$f"
+    done
+
+- name: Sync Python modules
+  ignore_errors: yes
+  shell: ln -s /usr/local/lib/python3/dist-packages/* /usr/lib/python3/dist-packages
+
+- name: Set udev rules
+  shell: |
+    for f in $(cat {{ config_dir }}/udev.paths); do
+      echo "Owning udev rule: $f"
+      chown pi:pi "$f"
+    done
+    udevadm control --reload-rules
+    udevadm trigger

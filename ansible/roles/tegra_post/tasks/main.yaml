@@ -1,0 +1,35 @@
+---
+
+- name: Hold modules
+  ignore_errors: yes
+  shell: "apt-mark hold {{ item }}"
+  with_items:
+    - nvidia-l4t-tools
+    - nvidia-l4t-bootloader
+
+- name: Fix Screen Manager
+  ignore_errors: yes
+  shell: |
+    mv /usr/share/xsessions/ux-ubuntu.desktop /usr/share/xsessions/ubuntu.desktop
+    rm -fr /usr/share/xsessions/gnome*.desktop
+
+- name: Fix nvpmodel_indicator logo
+  shell: rm -fr /usr/share/nvpmodel_indicator/nv_logo.svg
+  ignore_errors: yes
+
+- name: Delete oem-config
+  shell: "rm -r {{ item }}"
+  loop:
+    - /etc/systemd/nv-oem-config*.sh
+    - /etc/systemd/nvweston.sh
+    - /etc/systemd/system/nvweston.service
+    - /etc/nv-oem-config.conf
+    - /usr/sbin/nv-oem-config-firstboot
+    - /lib/systemd/system/nv-oem-config*.*
+  ignore_errors: yes
+
+- name: Append resize command to first boot
+  shell: |
+    sed -i '$ d' /etc/systemd/nvfb.sh
+    echo "./usr/lib/nvidia/resizefs/nvresizefs.sh" >> /etc/systemd/nvfb.sh
+    echo "rm -rf /etc/nv/nvfirstboot" >> /etc/systemd/nvfb.sh

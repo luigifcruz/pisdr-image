@@ -1,0 +1,11 @@
+---
+
+- name: Install base system
+  hosts: pisdr
+  connection: chroot
+  pre_tasks:
+    - include: tasks/mount.yaml
+  roles:
+    - base
+  post_tasks:
+    - include: tasks/umount.yaml

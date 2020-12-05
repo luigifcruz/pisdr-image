@@ -1,6 +1,0 @@
-swig
-avahi-daemon
-libavahi-client-dev
-libusb-1.0-0-dev
-
-python-dev python3-dev

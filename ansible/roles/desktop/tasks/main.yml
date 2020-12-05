@@ -1,0 +1,9 @@
+---
+
+- name: Install ubuntu desktop minimal
+  apt:
+    name: ubuntu-desktop-minimal
+    install_recommends: yes
+
+- name: Ensure default graphical target
+  shell: systemctl set-default graphical.target

@@ -1,0 +1,5 @@
+all:
+  hosts:
+    pisdr:
+      ansible_host: "{{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}"
+      ansible_executable: /bin/bash

@@ -1,0 +1,14 @@
+---
+
+- name: Install headless system
+  hosts: pisdr
+  connection: chroot
+  pre_tasks:
+    - include: tasks/mount.yaml
+  roles:
+    - uhd
+    - gnuradio
+    - soapysdr
+    - limesdr
+  post_tasks:
+    - include: tasks/umount.yaml

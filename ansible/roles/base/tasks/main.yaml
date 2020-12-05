@@ -1,0 +1,110 @@
+---
+
+- name: Update sources.list
+  template:
+    src: etc/apt/sources.list
+    dest: /etc/apt/sources.list
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Upgrade packages
+  apt:
+    upgrade: dist
+    update_cache: yes
+
+- name: Install packages
+  apt:
+    name: "{{ item }}"
+  loop:
+    - ubuntu-minimal
+    - ifupdown
+    - bridge-utils
+    - bash-completion
+    - net-tools
+    - pciutils
+    - python3-dev
+    - python3-pip
+    - ssh
+    - usbutils
+    - unzip
+    - pkg-config
+    - iotop
+    - re2c
+    - ninja-build
+    - cmake
+    - build-essential
+
+- name: Install Ubuntu Server
+  apt:
+    name: ubuntu-server
+    install_recommends: no
+
+- name: Generate locales
+  locale_gen:
+    name: en_US.UTF-8
+    state: present
+
+- name: Enable services
+  shell: systemctl enable {{ item }}
+  loop:
+    - ssh
+    - systemd-networkd
+    - systemd-resolved
+
+- name: Create network conf
+  template:
+    src: etc/netplan/netcfg.yaml
+    dest: /etc/netplan/netcfg.yaml
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Create new user
+  user:
+    name: "{{ user.name }}"
+    shell: "{{ user.shell }}"
+    password: "{{ user.password | password_hash('sha512') }}"
+    create_home: yes
+    groups: sudo,sys,video,uucp,lp,input,audio,plugdev
+    state: present
+
+- name: Creates PiSDR directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - "{{ config_dir }}"
+    - "{{ install_dir }}"
+
+- name: Update build directories
+  template:
+    src: "etc/pisdr/{{ item }}"
+    dest: "{{ config_dir }}/{{ item }}"
+    owner: root
+    group: root
+    mode: 0764
+  loop:
+    - "build.dirs"
+    - "udev.paths"
+
+- name: Update CMake optimization for ARM64
+  template:
+    src: etc/pisdr/optimizations_arm64.cmake
+    dest: "{{ config_dir }}/optimizations.cmake"
+    owner: root
+    group: root
+    mode: 0644
+  when: ansible_architecture == "aarch64"
+
+- name: Update CMake optimization for AMD64
+  template:
+    src: etc/pisdr/optimizations_amd64.cmake
+    dest: "{{ config_dir }}/optimizations.cmake"
+    owner: root
+    group: root
+    mode: 0644
+  when: ansible_architecture == "x86_64"
+
+- name: Ensure default multi-user target
+  shell: systemctl set-default multi-user.target

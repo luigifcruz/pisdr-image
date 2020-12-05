@@ -1,0 +1,19 @@
+---
+
+- name: Install Tegra patches
+  hosts: pisdr
+  connection: chroot
+  pre_tasks:
+    - include: tasks/mount.yaml
+      tags:
+        - always  
+  roles:
+    - {role: 'tegra_pre', tags: 'pre'}
+    - {role: 'tegra_post', tags: 'post'}
+  post_tasks:
+    - include: tasks/cleanup.yaml
+      tags:
+        - post  
+    - include: tasks/umount.yaml
+      tags:
+        - always  

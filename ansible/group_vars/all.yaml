@@ -1,0 +1,12 @@
+---
+
+user:
+  shell: /bin/bash
+  name: "{{ lookup('env', 'PISDR_USER') }}"
+  password: "{{ lookup('env', 'PISDR_PASS') }}"
+
+config_dir: "/etc/pisdr"
+install_dir: "/home/{{ user.name }}/PiSDR"
+ubuntu_release: "{{ lookup('env', 'PISDR_RELEASE') }}"
+environment: "{{ lookup('env', 'PISDR_ENVIRONMENT') }}"
+base_dir: "{{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}"

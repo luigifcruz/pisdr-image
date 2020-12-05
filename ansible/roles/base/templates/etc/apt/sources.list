@@ -1,0 +1,21 @@
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }} main restricted
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-updates main restricted
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }} universe
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-updates universe
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }} multiverse
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-updates multiverse
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-backports main restricted universe multiverse
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-security main restricted
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-security universe
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ {{ ubuntu_release }}-security multiverse
+
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ {{ ubuntu_release }} main restricted
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ {{ ubuntu_release }}-updates main restricted
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ {{ ubuntu_release }} universe
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ {{ ubuntu_release }}-updates universe
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ {{ ubuntu_release }} multiverse
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ {{ ubuntu_release }}-updates multiverse
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ {{ ubuntu_release }}-backports main restricted universe multiverse
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ {{ ubuntu_release }}-security main restricted
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ {{ ubuntu_release }}-security universe
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ {{ ubuntu_release }}-security multiverse

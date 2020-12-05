@@ -1,0 +1,9 @@
+---
+
+- name: Mount pseudo filesystems
+  connection: local
+  shell: mount -o bind '{{ item }}' '{{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}{{ item }}'
+  with_items:
+    - /proc
+    - /dev
+    - /dev/pts

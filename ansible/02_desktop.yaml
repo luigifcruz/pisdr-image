@@ -1,0 +1,11 @@
+---
+
+- name: Install desktop system
+  hosts: pisdr
+  connection: chroot
+  pre_tasks:
+    - include: tasks/mount.yaml
+  roles:
+    - desktop
+  post_tasks:
+    - include: tasks/umount.yaml

@@ -1,0 +1,12 @@
+---
+
+- name: Install GRUB patches
+  hosts: pisdr
+  connection: chroot
+  pre_tasks:
+    - include: tasks/mount.yaml
+  roles:
+    - grub
+  post_tasks:
+    - include: tasks/cleanup.yaml
+    - include: tasks/umount.yaml

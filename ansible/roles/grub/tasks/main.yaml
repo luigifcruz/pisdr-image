@@ -1,0 +1,17 @@
+---
+
+- name: Install generic Linux kernel
+  apt:
+    name: linux-image-generic
+    install_recommends: yes
+
+- name: Install GRUB Bootloader
+  apt:
+    name: grub2
+
+- name: Install Linux firmware
+  apt:
+    name: "{{ item }}"
+    install_recommends: yes
+  loop:
+    - linux-firmware

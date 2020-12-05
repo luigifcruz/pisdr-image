@@ -1,0 +1,39 @@
+---
+    
+- name: Install dependencies
+  apt:
+    name: "{{ item }}"
+  loop:
+    - libgstreamer-plugins-bad1.0-0
+    - libgstreamer-plugins-base1.0-0
+    - libevdev2
+    - libinput10
+    - libjpeg-turbo8
+    - libwayland-cursor0
+    - libgles2-mesa-dev
+    - libwayland-egl1-mesa
+    - libxkbcommon0
+    - libgstreamer1.0-0
+    - device-tree-compiler
+    - libcairo2
+    - libdatrie1
+    - libfontconfig1
+    - libharfbuzz0b
+    - libpangoft2-1.0-0
+    - libpixman-1-0
+    - libxrender1
+    - libpango-1.0-0
+    - libpangocairo-1.0-0
+    - libunwind8
+    - libappindicator3-dev
+    - gdisk
+    - parted
+
+- name: Download libffi6
+  get_url:
+    url: http://ports.ubuntu.com/pool/main/libf/libffi/libffi6_3.2.1-8_arm64.deb
+    dest: /tmp/libffi6_3.2.1-8_arm64.deb
+
+- name: Install a libffi6 package
+  apt:
+    deb: /tmp/libffi6_3.2.1-8_arm64.deb
