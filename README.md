@@ -65,6 +65,14 @@ If you are feeling quite adventurous, you can copy the image to the memory card 
 ```bash
 $ dd bs=4M if=pisdr.img of=/dev/sdX conv=fsync
 ```
+
+### Post Installation (Recommended)
+When running your PiSDR installation for the first time, it's recommended to run the following command in the target board. This command will enable math optimizations supported by your hardware and speedup programs like GNU Radio and GQRX.
+
+```bash
+volk_profile
+```
+
 ### Usage
 This image can be used as a standard Raspbian desktop environment. The HDMI Output, SSH, and Remote VNC are enabled by default. For usage information about any pre-installed software, please refer to our [Software Page](https://pisdr.luigi.ltd/docs/software/software/index).
 
@@ -80,6 +88,9 @@ Password: raspberry
 
 #### VNC
 The remote desktop can be accessed using any VNC client. The credentials are the same from the SSH. The default screen resolution is set to 720p. This setting can be easily changed inside the `raspi-config` menu (Advanced > Resolution).  _Note: The Remmina Client is known to be incompatible with this VNC Server._
+
+#### Running Programs
+Not all programs listed above will be listed on the desktop. Most of them require to be launched from the terminal. Please, refer to the documentation of the program that you would like to use for launch instructions.
 
 ## About the project
 PiSDR Project was created and maintained since 2019 by [Luigi F. Cruz](https://luigi.ltd).
