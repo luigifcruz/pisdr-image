@@ -1,0 +1,39 @@
+---
+- name: Creates PiSDR directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - "{{ config_dir }}"
+    - "{{ install_dir }}"
+
+- name: Update build directories
+  template:
+    src: "etc/pisdr/{{ item }}"
+    dest: "{{ config_dir }}/{{ item }}"
+    owner: root
+    group: root
+    mode: 0764
+  loop:
+    - "build.dirs"
+    - "udev.paths"
+
+- name: Update CMake optimization for ARM64
+  template:
+    src: etc/pisdr/optimizations_arm64.cmake
+    dest: "{{ config_dir }}/optimizations.cmake"
+    owner: root
+    group: root
+    mode: 0644
+    force: no
+  when: ansible_architecture == "aarch64"
+
+- name: Update CMake optimization for AMD64
+  template:
+    src: etc/pisdr/optimizations_amd64.cmake
+    dest: "{{ config_dir }}/optimizations.cmake"
+    owner: root
+    group: root
+    mode: 0644
+    force: no
+  when: ansible_architecture == "x86_64"

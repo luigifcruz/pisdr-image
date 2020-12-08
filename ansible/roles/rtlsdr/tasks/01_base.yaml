@@ -1,0 +1,24 @@
+---
+- name: Git checkout
+  git:
+    repo: https://github.com/osmocom/rtl-sdr
+    dest: "{{ install_dir }}/rtl-sdr"
+    version: master
+    recursive: yes
+    depth: 1
+
+- name: Build
+  shell: |
+    set -e
+    cd {{ install_dir }}/rtl-sdr
+    mkdir -p build
+    cd build
+    cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/etc/pisdr/optimizations.cmake \
+          -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON ../
+    ninja install
+    ldconfig
+    echo "$(pwd)" >> {{ config_dir }}/build.dirs
+
+- name: Install UDEV Rules
+  shell: |
+    echo "/etc/udev/rules.d/rtl-sdr.rules" >> {{ config_dir }}/udev.paths

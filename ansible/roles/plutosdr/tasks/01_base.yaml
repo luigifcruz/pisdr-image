@@ -1,0 +1,43 @@
+---
+- name: Git checkout libiio
+  git:
+    repo: https://github.com/analogdevicesinc/libiio
+    dest: "{{ install_dir }}/libiio"
+    version: master
+    recursive: yes
+    depth: 1
+
+- name: Build
+  shell: |
+    set -e
+    cd {{ install_dir }}/libiio
+    mkdir -p build
+    cd build
+    cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/etc/pisdr/optimizations.cmake \
+          -DINSTALL_UDEV_RULES=ON ../
+    ninja install
+    ldconfig
+    echo "$(pwd)" >> {{ config_dir }}/build.dirs
+
+- name: Git checkout
+  git:
+    repo: https://github.com/analogdevicesinc/libad9361-iio
+    dest: "{{ install_dir }}/libad9361-iio"
+    version: master
+    recursive: yes
+    depth: 1
+
+- name: Build
+  shell: |
+    set -e
+    cd {{ install_dir }}/libad9361-iio
+    mkdir -p build
+    cd build
+    cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/etc/pisdr/optimizations.cmake  ../
+    ninja install
+    ldconfig
+    echo "$(pwd)" >> {{ config_dir }}/build.dirs
+
+- name: Install UDEV Rules
+  shell: |
+    echo "/lib/udev/rules.d/90-libiio.rules" >> {{ config_dir }}/udev.paths

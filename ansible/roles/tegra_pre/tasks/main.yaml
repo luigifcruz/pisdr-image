@@ -1,5 +1,4 @@
 ---
-    
 - name: Install dependencies
   apt:
     name: "{{ item }}"

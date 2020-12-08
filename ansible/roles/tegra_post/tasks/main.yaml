@@ -1,5 +1,4 @@
 ---
-
 - name: Hold modules
   ignore_errors: yes
   shell: "apt-mark hold {{ item }}"

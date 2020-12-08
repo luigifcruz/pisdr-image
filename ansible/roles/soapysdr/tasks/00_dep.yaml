@@ -1,0 +1,13 @@
+---
+- name: Install Dependencies
+  apt:
+    name: "{{ item }}"
+  loop:
+    - swig
+    - avahi-daemon
+    - libavahi-client-dev
+    - libusb-1.0-0-dev
+    - python3-dev
+    - ninja-build
+    - cmake
+    - build-essential

@@ -1,0 +1,5 @@
+---
+- include_tasks: 00_dep.yaml
+- include_tasks: 01_base.yaml
+- include_tasks: 02_soapy.yaml
+- include_tasks: 03_gnuradio.yaml

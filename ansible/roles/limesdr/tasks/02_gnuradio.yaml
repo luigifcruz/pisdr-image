@@ -1,0 +1,20 @@
+---
+- name: Git checkout gr-limesdr
+  git:
+    repo: "https://github.com/myriadrf/gr-limesdr.git"
+    dest: "{{ install_dir }}/gr-limesdr"
+    version: gr-3.8
+    recursive: yes
+    depth: 1
+
+- name: Build gr-limesdr
+  shell: |
+    set -e
+    cd {{ install_dir }}/gr-limesdr
+    mkdir -p build
+    cd build
+    cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/etc/pisdr/optimizations.cmake \
+          -DCMAKE_CXX_FLAGS=-latomic ../
+    ninja install
+    ldconfig
+    echo "$(pwd)" >> {{ config_dir }}/build.dirs

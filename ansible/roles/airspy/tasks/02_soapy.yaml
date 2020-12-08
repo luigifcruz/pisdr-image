@@ -1,0 +1,19 @@
+---
+- name: Git checkout
+  git:
+    repo: https://github.com/pothosware/SoapyAirspy.git
+    dest: "{{ install_dir }}/SoapyAirspy"
+    version: master
+    recursive: yes
+    depth: 1
+
+- name: Build
+  shell: |
+    set -e
+    cd {{ install_dir }}/SoapyAirspy
+    mkdir -p build
+    cd build
+    cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/etc/pisdr/optimizations.cmake ../
+    ninja install
+    ldconfig
+    echo "$(pwd)" >> {{ config_dir }}/build.dirs

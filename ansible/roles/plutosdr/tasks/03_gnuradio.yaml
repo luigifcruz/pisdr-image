@@ -1,0 +1,19 @@
+---
+- name: Git checkout
+  git:
+    repo: https://github.com/analogdevicesinc/gr-iio
+    dest: "{{ install_dir }}/gr-iio"
+    version: upgrade-3.8
+    recursive: yes
+    depth: 1
+
+- name: Build
+  shell: |
+    set -e
+    cd {{ install_dir }}/gr-iio
+    mkdir -p build
+    cd build
+    cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/etc/pisdr/optimizations.cmake ../
+    ninja install
+    ldconfig
+    echo "$(pwd)" >> {{ config_dir }}/build.dirs

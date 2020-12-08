@@ -1,0 +1,19 @@
+---
+- name: Git checkout SoapySDR Remote
+  git:
+    repo: "https://github.com/pothosware/SoapyRemote.git"
+    dest: "{{ install_dir }}/SoapyRemote"
+    version: master
+    recursive: yes
+    depth: 1
+
+- name: Build SoapySDR Remote
+  shell: |
+    set -e
+    cd {{ install_dir }}/SoapyRemote
+    mkdir -p build
+    cd build
+    cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/etc/pisdr/optimizations.cmake ../
+    ninja install
+    ldconfig
+    echo "$(pwd)" >> {{ config_dir }}/build.dirs

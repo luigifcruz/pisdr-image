@@ -1,0 +1,19 @@
+---
+- name: Git checkout gr-soapy
+  git:
+    repo: "https://gitlab.com/librespacefoundation/gr-soapy.git"
+    dest: "{{ install_dir }}/gr-soapy"
+    version: master
+    recursive: yes
+    depth: 1
+
+- name: Build gr-soapy
+  shell: |
+    set -e
+    cd {{ install_dir }}/gr-soapy
+    mkdir -p build
+    cd build
+    cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/etc/pisdr/optimizations.cmake ../
+    ninja install
+    ldconfig
+    echo "$(pwd)" >> {{ config_dir }}/build.dirs

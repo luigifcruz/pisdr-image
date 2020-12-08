@@ -1,0 +1,10 @@
+---
+- name: Install Dependencies
+  apt:
+    name: "{{ item }}"
+  loop:
+    - libboost-all-dev
+    - libusb-1.0-0-dev
+    - ninja-build
+    - cmake
+    - build-essential

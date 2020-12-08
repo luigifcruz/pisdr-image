@@ -42,13 +42,13 @@ printf "(OK)\n"
 ##############################################################
 
 #### Phase 00
-#( $TARGET/build_base.sh )
+( $TARGET/build_base.sh )
 
 #### Phase 01
-#( $TARGET/build_headless.sh )
+( $TARGET/build_headless.sh )
 
 #### Phase 02
-#( $TARGET/build_desktop.sh )
+( $TARGET/build_desktop.sh )
 
 #### Phase 03
 if [[ "$PISDR_ARCH" == "arm64" ]]; then

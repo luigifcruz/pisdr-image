@@ -1,0 +1,27 @@
+---
+- name: Git checkout
+  git:
+    repo: "https://github.com/myriadrf/LimeSuite.git"
+    dest: "{{ install_dir }}/LimeSuite"
+    version: master
+    recursive: yes
+    depth: 1
+
+- name: Build
+  shell: |
+    set -e
+    cd {{ install_dir }}/LimeSuite
+    mkdir -p build
+    cd build
+    cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/etc/pisdr/optimizations.cmake \
+          -DCMAKE_CXX_FLAGS=-latomic ../
+    ninja install
+    ldconfig
+    echo "$(pwd)" >> {{ config_dir }}/build.dirs
+
+- name: Install UDEV Rules
+  shell: |
+    set -e
+    cd {{ install_dir }}/LimeSuite/udev-rules
+    ./install.sh
+    echo "/etc/udev/rules.d/64-limesuite.rules" >> {{ config_dir }}/udev.paths

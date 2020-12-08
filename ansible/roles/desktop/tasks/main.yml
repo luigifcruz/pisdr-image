@@ -1,5 +1,4 @@
 ---
-
 - name: Install ubuntu desktop minimal
   apt:
     name: ubuntu-desktop-minimal

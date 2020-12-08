@@ -1,0 +1,16 @@
+---
+- name: Install Dependencies
+  apt:
+    name: "{{ item }}"
+  loop:
+    - libusb-1.0-0-dev
+    - ninja-build
+    - cmake
+    - build-essential
+    - libxml2-dev
+    - bison
+    - flex
+    - libcdk5-dev
+    - libaio-dev
+    - libserialport-dev
+    - libavahi-client-dev

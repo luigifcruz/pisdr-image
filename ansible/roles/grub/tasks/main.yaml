@@ -1,5 +1,4 @@
 ---
-
 - name: Install generic Linux kernel
   apt:
     name: linux-image-generic

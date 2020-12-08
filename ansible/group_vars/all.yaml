@@ -1,5 +1,4 @@
 ---
-
 user:
   shell: /bin/bash
   name: "{{ lookup('env', 'PISDR_USER') }}"

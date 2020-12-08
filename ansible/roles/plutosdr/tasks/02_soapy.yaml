@@ -1,0 +1,20 @@
+---
+- name: Git checkout
+  git:
+    repo: https://github.com/pothosware/SoapyPlutoSDR.git
+    dest: "{{ install_dir }}/SoapyPlutoSDR"
+    version: master
+    recursive: yes
+    depth: 1
+
+- name: Build
+  shell: |
+    set -e
+    cd {{ install_dir }}/SoapyPlutoSDR
+    mkdir -p build
+    cd build
+    cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/etc/pisdr/optimizations.cmake \
+          -DCMAKE_CXX_FLAGS=-latomic ../
+    ninja install
+    ldconfig
+    echo "$(pwd)" >> {{ config_dir }}/build.dirs

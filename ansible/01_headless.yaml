@@ -1,14 +1,18 @@
 ---
-
 - name: Install headless system
   hosts: pisdr
   connection: chroot
   pre_tasks:
     - include: tasks/mount.yaml
+    - include: tasks/update-apt.yaml
   roles:
     - uhd
     - gnuradio
     - soapysdr
     - limesdr
+    - airspy
+    - airspyhf
+    - rtlsdr
+    - plutosdr
   post_tasks:
     - include: tasks/umount.yaml

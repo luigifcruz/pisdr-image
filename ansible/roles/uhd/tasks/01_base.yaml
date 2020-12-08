@@ -1,0 +1,21 @@
+---
+- name: Git checkout
+  git:
+    repo: "https://github.com/EttusResearch/uhd.git"
+    dest: "{{ install_dir }}/uhd"
+    version: UHD-3.15.LTS
+    recursive: yes
+
+- name: Build
+  shell: |
+    set -e
+    cd {{ install_dir }}/uhd/host
+    mkdir -p build
+    cd build
+    cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/etc/pisdr/optimizations.cmake ../
+    ninja install
+    cp /usr/local/lib/uhd/utils/uhd-usrp.rules /etc/udev/rules.d/
+    uhd_images_downloader
+    ldconfig
+    echo "$(pwd)" >> {{ config_dir }}/build.dirs
+    echo "/etc/udev/rules.d/uhd-usrp.rules" >> {{ config_dir }}/udev.paths

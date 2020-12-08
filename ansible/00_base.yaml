@@ -1,5 +1,4 @@
 ---
-
 - name: Install base system
   hosts: pisdr
   connection: chroot
@@ -7,5 +6,6 @@
     - include: tasks/mount.yaml
   roles:
     - base
+    - pisdr
   post_tasks:
     - include: tasks/umount.yaml
