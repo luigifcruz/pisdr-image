@@ -90,7 +90,7 @@ Password: raspberry
 The remote desktop can be accessed using any VNC client. The credentials are the same from the SSH. The default screen resolution is set to 720p. This setting can be easily changed inside the `raspi-config` menu (Advanced > Resolution).  _Note: The Remmina Client is known to be incompatible with this VNC Server._
 
 #### Running Programs
-Not all programs listed above will be listed on the desktop. Most of them require to be launched from the terminal. Please, refer to the documentation of the program that you would like to use for launch instructions.
+Not all programs listed above will be listed on the desktop. Most of them require to be launched from the terminal. Please, refer to the documentation of the program that you would like to use for launch instructions. The `README.md` files can also be accessed offline inside the `/home/pi/PiSDR` directory.
 
 ## About the project
 PiSDR Project was created and maintained since 2019 by [Luigi F. Cruz](https://luigi.ltd).
