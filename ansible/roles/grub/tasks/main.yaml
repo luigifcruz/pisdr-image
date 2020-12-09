@@ -6,7 +6,13 @@
 
 - name: Install GRUB Bootloader
   apt:
-    name: grub2
+    name: grub-efi-amd64
+
+- name: Install GRUB System
+  shell: |
+    set -e
+    grub-install --target=x86_64-efi
+    GRUB_DISABLE_OS_PROBER=true update-grub
 
 - name: Install Linux firmware
   apt:

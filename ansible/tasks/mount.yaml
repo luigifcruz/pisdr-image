@@ -1,8 +1,8 @@
 ---
 - name: Mount pseudo filesystems
   connection: local
-  shell: mount -o bind '{{ item }}' '{{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}{{ item }}'
-  with_items:
-    - /proc
-    - /dev
-    - /dev/pts
+  shell: |
+    mount -o bind,ro /dev {{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}/dev
+    mount -o bind,ro /dev/pts {{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}/dev/pts
+    mount -t proc none {{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}/proc
+    mount -t sysfs none {{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}/sys

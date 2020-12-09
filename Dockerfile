@@ -18,7 +18,9 @@ RUN apt install -y --no-install-recommends \
         kpartx \
         lbzip2 \
         sudo \
-        e2fsprogs
+        e2fsprogs \
+        dosfstools \
+        qemu-utils
 
 RUN python3 -m pip install ansible
 

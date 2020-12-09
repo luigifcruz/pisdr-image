@@ -3,3 +3,4 @@ work/
 deploy/
 apt-cacher-ng/
 .git/objects/*
+build/
