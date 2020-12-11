@@ -14,5 +14,6 @@
     - airspyhf
     - rtlsdr
     - plutosdr
+    - hackrf
   post_tasks:
     - include: tasks/umount.yaml

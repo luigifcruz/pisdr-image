@@ -12,3 +12,8 @@
     - {role: 'gnuradio', tags: 'gnuradio'}
     - {role: 'soapysdr', tags: 'soapysdr'}
     - {role: 'limesdr', tags: 'limesdr'}
+    - {role: 'airspy', tags: 'airspy'}
+    - {role: 'airspyhf', tags: 'airspyhf'}
+    - {role: 'rtlsdr', tags: 'rtlsdr'}
+    - {role: 'plutosdr', tags: 'plutosdr'}
+    - {role: 'hackrf', tags: 'hackrf'}
