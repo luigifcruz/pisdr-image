@@ -12,6 +12,7 @@
   shell: |
     set -e
     grub-install --target=x86_64-efi
+    sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="[^"]*/& net.ifnames=0 biosdevname=0/' /etc/default/grub
     GRUB_DISABLE_OS_PROBER=true update-grub
 
 - name: Install Linux firmware

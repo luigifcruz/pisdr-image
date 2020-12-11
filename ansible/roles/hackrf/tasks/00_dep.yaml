@@ -1,0 +1,11 @@
+---
+- name: Install Dependencies
+  apt:
+    name: "{{ item }}"
+  loop:
+    - libusb-1.0-0-dev
+    - pkg-config
+    - libfftw3-dev
+    - ninja-build
+    - cmake
+    - build-essential

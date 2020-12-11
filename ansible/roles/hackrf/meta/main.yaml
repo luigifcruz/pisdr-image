@@ -1,0 +1,5 @@
+---
+dependencies:
+  - role: pisdr
+  - role: gnuradio
+  - role: soapysdr

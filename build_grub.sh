@@ -10,7 +10,7 @@ LOOP_DEV="/dev/loop5"
 
 printf "Creating image file... "
 if [ "$(lsblk | grep $(basename $LOOP_DEV))" ]; then
-    losetup -d $LOOP_DEV
+    losetup -d $LOOP_DEV || true
 fi
 rm -fr $GRUB_IMG
 printf "(OK)\n"

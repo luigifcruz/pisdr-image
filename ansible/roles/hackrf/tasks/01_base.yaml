@@ -1,0 +1,27 @@
+---
+- name: Git checkout
+  git:
+    repo: "https://github.com/mossmann/hackrf.git"
+    dest: "{{ install_dir }}/hackrf"
+    version: master
+    recursive: yes
+    depth: 1
+
+- name: Build
+  shell: |
+    set -e
+    cd {{ install_dir }}/hackrf/host
+    mkdir -p build
+    cd build
+    cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/etc/pisdr/optimizations.cmake \
+          -DINSTALL_UDEV_RULES=ON ../
+    ninja install
+    ldconfig
+    echo "$(pwd)" >> {{ config_dir }}/build.dirs
+
+- name: Install UDEV Rules
+  shell: |
+    set -e
+    cd {{ install_dir }}/LimeSuite/udev-rules
+    ./install.sh
+    echo "/etc/udev/rules.d/53-hackrf.rules" >> {{ config_dir }}/udev.paths
