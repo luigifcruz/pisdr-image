@@ -1,0 +1,4 @@
+IMG_NAME='PiSDR'
+ENABLE_SSH=1
+HOSTNAME='pisdr'
+FIRST_USER_PASS='raspberry'
