@@ -7,7 +7,6 @@ node_modules
 .DS_Store
 deploy/*
 work/*
-config
 postrun.sh
 SKIP
 SKIP_IMAGES
