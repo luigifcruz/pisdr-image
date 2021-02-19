@@ -24,4 +24,6 @@ flex
 ffmpeg
 libavcodec-dev
 libavformat-dev
+libqt5serialport5
+libqt5serialport5-dev
 libopus-dev
