@@ -1,19 +1,12 @@
 #!/bin/bash -e
 
+install -v -o 1000 -g 1000 -m 755 targets/enable.sh "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090/"
+install -v -o 1000 -g 1000 -m 755 targets/disable.sh "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090/"
+install -v -o 1000 -g 1000 -m 755 targets/configure_rbfeeder.sh "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090/"
+install -v -o 1000 -g 1000 -m 755 targets/configure_fr24feed.sh "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090/"
+
 on_chroot << EOF
-mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
-cd          "/home/${FIRST_USER_NAME}/PiSDR/Software"
-
-if [ ! -d "dump1090" ]; then
-    install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090/"
-fi
-
-install -v -o 1000 -g 1000 -m 755 targets/enable.sh "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090"
-install -v -o 1000 -g 1000 -m 755 targets/disable.sh "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090"
-install -v -o 1000 -g 1000 -m 755 targets/configure_rbfeeder.sh "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090"
-install -v -o 1000 -g 1000 -m 755 targets/configure_fr24feed.sh "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090"
-
-cd dump1090
+cd "/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090"
 
 repository="https://github.com/wiedehopf/readsb.git"
 
