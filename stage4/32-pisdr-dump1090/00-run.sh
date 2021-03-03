@@ -16,7 +16,7 @@ apt-get install --no-install-recommends --no-install-suggests -y git build-essen
     pkg-config dh-systemd libncurses5-dev lighttpd zlib1g-dev zlib1g unzip
 
 rm -rf /usr/local/share/adsb-wiki/readsb-install/git
-if ! git clone --branch stale --depth 1 https://github.com/wiedehopf/readsb.git "$ipath/git"
+if ! git clone --branch stale --depth 1 https://github.com/wiedehopf/readsb.git "/usr/local/share/adsb-wiki/readsb-install/git"
 then
     echo "Unable to git clone the repository"
     exit 1
