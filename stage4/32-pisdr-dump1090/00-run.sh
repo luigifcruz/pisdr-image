@@ -8,22 +8,22 @@ install -v -o 1000 -g 1000 -m 755 targets/configure_fr24feed.sh "${ROOTFS_DIR}/h
 on_chroot << EOF
 cd "/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090"
 
-repository="https://github.com/wiedehopf/readsb.git"
+mkdir -p /usr/local/share/adsb-wiki/readsb-install
 
 apt-get update
 apt-get install --no-install-recommends --no-install-suggests -y git build-essential debhelper libusb-1.0-0-dev \
     pkg-config dh-systemd libncurses5-dev lighttpd zlib1g-dev zlib1g unzip
 
-rm -rf "$ipath"/git
-if ! git clone --branch stale --depth 1 "$repository" "$ipath/git"
+rm -rf /usr/local/share/adsb-wiki/readsb-install/git
+if ! git clone --branch stale --depth 1 https://github.com/wiedehopf/readsb.git "$ipath/git"
 then
     echo "Unable to git clone the repository"
     exit 1
 fi
 
-rm -rf "$ipath"/readsb*.deb
+rm -rf /usr/local/share/adsb-wiki/readsb-install/readsb*.deb
 
-cd "$ipath/git"
+cd /usr/local/share/adsb-wiki/readsb-install/git
 
 sed -i 's/librtlsdr0, librtlsdr-dev, //g' debian/control
 
@@ -102,7 +102,7 @@ EOF
 chmod a+x /usr/local/bin/readsb-set-location
 
 echo --------------
-cd "$ipath"
+cd /usr/local/share/adsb-wiki/readsb-install
 
 wget -O tar1090-install.sh https://raw.githubusercontent.com/wiedehopf/tar1090/master/install.sh
 bash tar1090-install.sh /run/readsb
