@@ -48,34 +48,10 @@ echo "Package installed!"
 
 cp -n debian/lighttpd/* /etc/lighttpd/conf-available
 
-echo --------------
-cd /usr/local/share/adsb-wiki/readsb-install
-
-wget -O tar1090-install.sh https://raw.githubusercontent.com/wiedehopf/tar1090/master/install.sh
-bash tar1090-install.sh /run/readsb
-
-if ! systemctl show readsb | grep 'ExecMainStatus=0' -qs; then
-    echo --------------
-    echo --------------
-    journalctl -u readsb | tail -n30
-    echo --------------
-    echo --------------
-    echo "ERROR: readsb service didn't start, if inquiring about the issue please post the above 30 lines of log!"
-    echo "       common issues: SDR not plugged in."
-    echo "       the webinterface will show an error until readsb is running!"
-    echo --------------
-fi
-
-echo --------------
-
 echo "[PiSDR] Disabling services. To enable them, run 'bash enable.sh'."
 
-systemctl disable --now readsb
-systemctl disable --now tar1090
-systemctl disable --now lighttpd
+systemctl disable --now readsb || true
+systemctl disable --now tar1090 || true
+systemctl disable --now lighttpd || true
 
-echo "[PiSDR] Deleting build files to save space."
-
-rm -fr /usr/local/share/tar1090/git-db
-rm -fr /usr/local/share/tar1090/git
 EOF
