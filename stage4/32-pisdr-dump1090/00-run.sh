@@ -6,6 +6,9 @@ install -v -o 1000 -g 1000 -m 755 targets/disable.sh "${ROOTFS_DIR}/home/${FIRST
 install -v -o 1000 -g 1000 -m 755 targets/configure_rbfeeder.sh "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090/"
 install -v -o 1000 -g 1000 -m 755 targets/configure_fr24feed.sh "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090/"
 
+install -v -o 1000 -g 1000 -m 755 targets/readsb-set-location "${ROOTFS_DIR}/usr/local/bin/"
+install -v -o 1000 -g 1000 -m 755 targets/readsb-gain "${ROOTFS_DIR}/usr/local/bin/"
+
 on_chroot << EOF
 cd "/home/${FIRST_USER_NAME}/PiSDR/Software/dump1090"
 
@@ -45,63 +48,6 @@ echo "Package installed!"
 
 cp -n debian/lighttpd/* /etc/lighttpd/conf-available
 
-# script to change gain
-
-mkdir -p /usr/local/bin
-cat >/usr/local/bin/readsb-gain <<"EOF"
-#!/bin/bash
-gain=$(echo $1 | tr -cd '[:digit:].-')
-if [[ $gain == "" ]]; then echo "Error, invalid gain!"; exit 1; fi
-if ! grep gain /etc/default/readsb &>/dev/null; then sed -i -e 's/RECEIVER_OPTIONS="/RECEIVER_OPTIONS="--gain 49.6 /' /etc/default/readsb; fi
-sudo sed -i -E -e "s/--gain .?[0-9]*.?[0-9]* /--gain $gain /" /etc/default/readsb
-sudo systemctl restart readsb
-EOF
-chmod a+x /usr/local/bin/readsb-gain
-
-# set-location
-cat >/usr/local/bin/readsb-set-location <<"EOF"
-#!/bin/bash
-
-lat=$(echo $1 | tr -cd '[:digit:].-')
-lon=$(echo $2 | tr -cd '[:digit:].-')
-
-if ! awk "BEGIN{ exit ($lat > 90) }" || ! awk "BEGIN{ exit ($lat < -90) }"; then
-	echo
-	echo "Invalid latitude: $lat"
-	echo "Latitude must be between -90 and 90"
-	echo
-	echo "Example format for latitude: 51.528308"
-	echo
-	echo "Usage:"
-	echo "readsb-set-location 51.52830 -0.38178"
-	echo
-	exit 1
-fi
-if ! awk "BEGIN{ exit ($lon > 180) }" || ! awk "BEGIN{ exit ($lon < -180) }"; then
-	echo
-	echo "Invalid longitude: $lon"
-	echo "Longitude must be between -180 and 180"
-	echo
-	echo "Example format for latitude: -0.38178"
-	echo
-	echo "Usage:"
-	echo "readsb-set-location 51.52830 -0.38178"
-	echo
-	exit 1
-fi
-
-echo
-echo "setting Latitude: $lat"
-echo "setting Longitude: $lon"
-echo
-if ! grep -e '--lon' /etc/default/readsb &>/dev/null; then sed -i -e 's/DECODER_OPTIONS="/DECODER_OPTIONS="--lon -0.38178 /' /etc/default/readsb; fi
-if ! grep -e '--lat' /etc/default/readsb &>/dev/null; then sed -i -e 's/DECODER_OPTIONS="/DECODER_OPTIONS="--lat 51.52830 /' /etc/default/readsb; fi
-sed -i -E -e "s/--lat .?[0-9]*.?[0-9]* /--lat $lat /" /etc/default/readsb
-sed -i -E -e "s/--lon .?[0-9]*.?[0-9]* /--lon $lon /" /etc/default/readsb
-systemctl restart readsb
-EOF
-chmod a+x /usr/local/bin/readsb-set-location
-
 echo --------------
 cd /usr/local/share/adsb-wiki/readsb-install
 
@@ -132,5 +78,4 @@ echo "[PiSDR] Deleting build files to save space."
 
 rm -fr /usr/local/share/tar1090/git-db
 rm -fr /usr/local/share/tar1090/git
-
 EOF
