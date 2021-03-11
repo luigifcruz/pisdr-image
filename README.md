@@ -1,10 +1,10 @@
 # 🥧 PiSDR: The SDR Linux Distro for Your Pi
-#### Modified Raspbian image with the latest SDR software pre-installed and ready to go. Compatible with every Raspberry Pi.
+#### Modified Raspbian image with the latest SDR software pre-installed and ready to go. Compatible with every Pi.
 
 [![Github All Downloads](https://img.shields.io/github/downloads/luigifreitas/pisdr-image/total)]()
 [![Github Latest Version](https://img.shields.io/github/v/release/luigifreitas/pisdr-image)]()
 
-The PiSDR is a Raspbian based operating system for the Raspberry Pi pre-loaded with multiple Software Defined Radio software. It was created to serve as a fast and reliable bootstrap for SDR projects.
+The PiSDR is a Raspbian based operating system for the Pi pre-loaded with multiple Software Defined Radio software. It was created to serve as a fast and reliable bootstrap for SDR projects.
 
 ## Documentation
 This is a single person project with limited time and resources to acquire expensive SDRs. Only radios validated by tests are supported by this image. This is a limitation to maintain a certain level of quality. If you are a vendor and want your SDR supported by this image, consider donating one unit to the project. The latest version of the PiSDR supports every Raspberry Pi model (Zero, 1, 2, 3 and 4).
@@ -108,7 +108,7 @@ Feel free to hit me up on [Twitter](https://twitter.com/luigifcruz) or [Email](m
 PiSDR is distributed by an [MIT license](https://raw.githubusercontent.com/luigifreitas/pisdr-image/master/LICENSE).
 
 ### Disclaimer
-This project isn't in any way associated with the Raspberry Pi Foundation. 
+This project isn't in any way associated with the Raspberry Pi Foundation.
 
 ### Contributing
 Everyone is very welcome to contribute to our project. Project icon made by [Smashicons](https://www.flaticon.com/authors/smashicons).
