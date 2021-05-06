@@ -7,7 +7,7 @@ name: Build & Deploy Image
 jobs:
   build:
     name: Build & Release Image
-    runs-on: odin
+    runs-on: ARM64
     timeout-minutes: 2880
     env:
       working-directory: ./
