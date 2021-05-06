@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
 on_chroot << EOF
-pip3 install cmake ninja
+python3 -m pip install cmake
+python3 -m pip install ninja
 EOF
