@@ -7,7 +7,7 @@ name: Build & Deploy Image
 jobs:
   build:
     name: Build & Release Image
-    runs-on: self-hosted
+    runs-on: odin
     timeout-minutes: 2880
     env:
       working-directory: ./
@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Clean docker
         id: clean_docker
-        working-directory: ${{ env.working-directory }} 
+        working-directory: ${{ env.working-directory }}
         run: |
           docker system prune -af
           docker system prune --volumes -f
@@ -25,7 +25,7 @@ jobs:
           docker container rm $(docker container ls -aq) || true
       - name: Build project
         id: builder
-        working-directory: ${{ env.working-directory }} 
+        working-directory: ${{ env.working-directory }}
         run: |
           bash build-docker.sh
           echo ::set-output name=filename::$(ls deploy/*.img.xz | xargs -n 1 basename)
