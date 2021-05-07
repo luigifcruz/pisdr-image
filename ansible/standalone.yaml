@@ -5,7 +5,6 @@
   vars:
     PISDR_USER: luigi
   pre_tasks:
-    - {include: 'tasks/mount.yaml', tags: 'always'}
     - {include: 'tasks/update-apt.yaml', tags: 'always'}
   roles:
     - {role: 'uhd', tags: 'uhd'}

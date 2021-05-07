@@ -6,13 +6,15 @@ printf "Create base rootfs directory... "
 mkdir -p $BASE_DIR
 printf "(OK)\n"
 
-printf "Enabling qemu kernel components... "
-update-binfmts --enable qemu-arm > /dev/null 2>&1
-if [ ! "$(ls -A /proc/sys/fs/binfmt_misc/)" ]; then
-    printf "(NOK)\n"
-    exit
+if [[ "$PISDR_ARCH" != $(uname -p) ]]; then
+    printf "Enabling qemu kernel components... "
+    update-binfmts --enable qemu-arm > /dev/null 2>&1
+    if [ ! "$(ls -A /proc/sys/fs/binfmt_misc/)" ]; then
+        printf "(NOK)\n"
+        exit
+    fi
+    printf "(OK)\n"
 fi
-printf "(OK)\n"
 
 echo "Run debootstrap first stage..."
 if [ ! -f "${BASE_DIR}/.bootstrap_completed" ]; then

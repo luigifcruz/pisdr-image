@@ -1,11 +1,11 @@
-on: ['pull_request']
+on: ['commit']
 
 name: Build & Validate Image
 
 jobs:
   build:
     name: Build & Validate Image
-    runs-on: self-hosted
+    runs-on: arm64
     timeout-minutes: 2880
     env:
       working-directory: ./

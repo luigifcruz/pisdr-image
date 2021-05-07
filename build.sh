@@ -12,9 +12,9 @@ export PISDR_IMG_NAME="$(date '+%Y-%m-%d')-PiSDR-$PISDR_ARCH"
 
 #### Build Settings
 BUILD_BOARD_TEGRA_NANO=true
-BUILD_BOARD_TEGRA_AGX=true
+BUILD_BOARD_TEGRA_AGX=false
 BUILD_BOARD_RPI=false
-BUILD_BOARD_GRUB=true
+BUILD_BOARD_GRUB=false
 
 #### Compiler Settings
 export TARGET="/target"

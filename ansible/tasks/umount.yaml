@@ -2,6 +2,7 @@
 - name: Umount pseudo filesystems
   connection: local
   shell: umount -l '{{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}{{ item }}'
+  ignore_errors: yes
   with_items:
     - /proc
     - /dev/pts
