@@ -2,7 +2,20 @@
 - name: Mount pseudo filesystems
   connection: local
   shell: |
-    mount -o bind,ro /dev {{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}/dev
-    mount -o bind,ro /dev/pts {{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}/dev/pts
-    mount -t proc none {{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}/proc
-    mount -t sysfs none {{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}/sys
+    ROOTFS_DIR={{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}
+
+  	if grep -q "$(realpath "${ROOTFS_DIR}"/proc)"; then
+      mount -t proc proc "${ROOTFS_DIR}/proc"
+    fi
+
+    if grep -q "$(realpath "${ROOTFS_DIR}"/dev)"; then
+      mount --bind /dev "${ROOTFS_DIR}/dev"
+    fi
+    
+    if grep -q "$(realpath "${ROOTFS_DIR}"/dev/pts)"; then
+      mount --bind /dev/pts "${ROOTFS_DIR}/dev/pts"
+    fi
+
+    if grep -q "$(realpath "${ROOTFS_DIR}"/sys)"; then
+      mount --bind /sys "${ROOTFS_DIR}/sys"
+    fi
