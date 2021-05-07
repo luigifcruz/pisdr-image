@@ -1,4 +1,4 @@
-on: ['commit']
+on: ['push']
 
 name: Build & Validate Image
 
