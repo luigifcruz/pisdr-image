@@ -1,4 +1,4 @@
-FROM amd64/ubuntu:groovy
+FROM ubuntu:groovy
 
 RUN apt update
 RUN apt install -y --no-install-recommends \
