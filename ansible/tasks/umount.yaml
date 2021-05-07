@@ -1,4 +1,9 @@
 ---
 - name: Umount pseudo filesystems
   connection: local
-  shell: umount --recursive '{{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}'
+  shell: umount --recursive '{{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}{{ item }}'
+  with_items:
+    - /proc
+    - /dev/pts
+    - /dev
+    - /sys
