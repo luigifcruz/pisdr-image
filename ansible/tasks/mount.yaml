@@ -4,7 +4,7 @@
   shell: |
     ROOTFS_DIR={{ lookup('env', 'ANSIBLE_ROOTFS_DIR') }}
 
-  	if grep -q "$(realpath "${ROOTFS_DIR}"/proc)"; then
+    if grep -q "$(realpath "${ROOTFS_DIR}"/proc)"; then
       mount -t proc proc "${ROOTFS_DIR}/proc"
     fi
 
