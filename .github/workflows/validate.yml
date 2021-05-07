@@ -25,7 +25,8 @@ jobs:
         id: builder
         working-directory: ${{ env.working-directory }} 
         run: |
-          bash build-docker.sh
+          make build
+          make run arch=arm64
           echo ::set-output name=filename::$(ls deploy/*.img.xz | xargs -n 1 basename)
       - name: Fix Permissions
         id: fix_perm_filename
