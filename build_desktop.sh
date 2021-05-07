@@ -3,7 +3,7 @@
 set -e
 
 printf "Copying base rootfs... "
-cp -rp $HEADLESS_DIR/. $DESKTOP_DIR/
+cp -rax $HEADLESS_DIR/. $DESKTOP_DIR/
 printf "(OK)\n"
 
 echo "Run desktop installation tasks..."

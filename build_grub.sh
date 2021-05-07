@@ -51,7 +51,7 @@ mount $ROOT_UUID $GRUB_DIR
 printf "(OK)\n"
 
 printf "Copying filesystem to image... "
-cp -rp $INPUT_DIR/. $GRUB_DIR/
+cp -rax $INPUT_DIR/. $GRUB_DIR/
 printf "(OK)\n"
 
 printf "Mounting efi filesystem... "

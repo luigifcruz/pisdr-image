@@ -30,7 +30,7 @@ echo "Downloading Tegra assets... (OK)"
 
 printf "Copying rootfs assets... "
 rm -fr $TEGRA_DIR/Linux_for_Tegra/rootfs/*
-cp -rp $INPUT_DIR/. $TEGRA_DIR/Linux_for_Tegra/rootfs/
+cp -rax $INPUT_DIR/. $TEGRA_DIR/Linux_for_Tegra/rootfs/
 printf "(OK)\n"
 
 printf "Ameliorate Tegra installer... "

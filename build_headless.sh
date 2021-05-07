@@ -3,7 +3,7 @@
 set -e
 
 printf "Copying base rootfs... "
-cp -rp $BASE_DIR/. $HEADLESS_DIR/
+cp -rax $BASE_DIR/. $HEADLESS_DIR/
 printf "(OK)\n"
 
 echo "Run headless installation tasks..."
