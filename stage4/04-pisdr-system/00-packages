@@ -5,4 +5,3 @@ build-essential
 git
 pkg-config
 re2c
-ninja
