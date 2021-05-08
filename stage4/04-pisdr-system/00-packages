@@ -5,3 +5,4 @@ build-essential
 git
 pkg-config
 re2c
+libssl-dev
