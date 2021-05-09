@@ -80,6 +80,7 @@ mkdir -p "${DEPLOY_DIR}"
 
 rm -f "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.zip"
 rm -f "${DEPLOY_DIR}/${IMG_FILENAME}${IMG_SUFFIX}.img"
+rm -f "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.img.xz"
 
 mv "$INFO_FILE" "$DEPLOY_DIR/"
 
@@ -97,9 +98,9 @@ fi
 
 if [ "${DEPLOY_ZIP}" == "1" ]; then
 	pushd "${STAGE_WORK_DIR}" > /dev/null
-	zip "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.zip" \
-		"$(basename "${IMG_FILE}")"
+	xz -c "$(basename "${IMG_FILE}")" > "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.img.xz"
 	popd > /dev/null
+	rm -f "${DEPLOY_DIR}/${IMG_FILENAME}${IMG_SUFFIX}.img"
 else
 	mv "$IMG_FILE" "$DEPLOY_DIR/"
 fi
