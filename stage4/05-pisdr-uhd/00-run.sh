@@ -11,7 +11,10 @@ fi
 cd uhd/host
 mkdir -p build
 cd build
-cmake -GNinja -DCMAKE_BUILD_TYPE=Release ../
+cmake -DCMAKE_CXX_FLAGS:STRING="-march=armv7-a -mfloat-abi=hard -mfpu=neon -mtune=cortex-a15 -Wno-psabi" \
+      -DCMAKE_C_FLAGS:STRING="-march=armv7-a -mfloat-abi=hard -mfpu=neon -mtune=cortex-a15 -Wno-psabi" \
+      -DCMAKE_ASM_FLAGS:STRING="-march=armv7-a -mfloat-abi=hard -mfpu=neon -mtune=cortex-a15" \
+      -GNinja -DCMAKE_BUILD_TYPE=Release ../
 ninja install
 cp /usr/local/lib/uhd/utils/uhd-usrp.rules /etc/udev/rules.d/
 ldconfig
