@@ -5,7 +5,7 @@ mkdir -p 	"/home/${FIRST_USER_NAME}/PiSDR/Radios"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 
 if [ ! -d "gr-limesdr" ]; then
-    git clone --single-branch --branch gr-3.8 --depth 1 https://github.com/myriadrf/gr-limesdr.git
+    git clone --single-branch --branch gr39 --depth 1 https://github.com/daniestevez/gr-limesdr.git
 fi
 
 cd gr-limesdr

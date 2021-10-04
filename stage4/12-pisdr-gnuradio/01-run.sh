@@ -5,7 +5,7 @@ mkdir -p 	"/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "gnuradio" ]; then
-    git clone --single-branch --branch maint-3.8 --depth 1 --recurse-submodules --shallow-submodules https://github.com/gnuradio/gnuradio.git
+    git clone --single-branch --branch maint-3.9 --depth 1 --recurse-submodules --shallow-submodules https://github.com/gnuradio/gnuradio.git
 fi
 
 cd gnuradio

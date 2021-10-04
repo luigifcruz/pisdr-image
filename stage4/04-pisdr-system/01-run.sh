@@ -5,7 +5,7 @@ install -v -o 1000 -g 1000 -m 755 shortcut/sdrangel.desktop "${ROOTFS_DIR}/home/
 install -v -o 1000 -g 1000 -m 755 shortcut/gpredict.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/Desktop/"
 
 install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/usr/share/rpd-wallpaper/"
-install -v -o 1000 -g 1000 -m 755 wallpaper/donald-giannatti-vla.jpg "${ROOTFS_DIR}/usr/share/rpd-wallpaper/"
+install -v -o 1000 -g 1000 -m 755 wallpaper/kevin-quezada-lmt.jpg "${ROOTFS_DIR}/usr/share/rpd-wallpaper/"
 
 install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/"
 install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/menus/"
