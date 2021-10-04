@@ -1,5 +1,4 @@
 libboost-all-dev
-swig
 libzmq3-dev
 libfftw3-dev
 libgsl-dev
@@ -19,6 +18,7 @@ liblog4cpp5-dev
 libqwt-qt5-dev
 libqt5opengl5-dev
 libcodec2-dev
+pybind11-dev
 
 python3-numpy
 python3-mako
