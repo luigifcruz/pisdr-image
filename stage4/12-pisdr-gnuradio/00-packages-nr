@@ -18,7 +18,6 @@ liblog4cpp5-dev
 libqwt-qt5-dev
 libqt5opengl5-dev
 libcodec2-dev
-pybind11-dev
 libsndfile1-dev
 
 python3-numpy
