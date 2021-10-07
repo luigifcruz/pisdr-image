@@ -29,10 +29,8 @@ rm -rf /usr/local/share/adsb-wiki/readsb-install/readsb*.deb
 
 cd /usr/local/share/adsb-wiki/readsb-install/git
 
-sed -i 's/librtlsdr0, librtlsdr-dev, //g' debian/control
-
 export DEB_BUILD_OPTIONS=noddebs
-if ! dpkg-buildpackage --ignore-builtin-builddeps -b -Prtlsdr -ui -uc -us
+if ! dpkg-buildpackage -d -b -Prtlsdr -ui -uc -us
 then
     echo "Something went wrong building the debian package, exiting!"
     exit 1
