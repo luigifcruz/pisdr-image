@@ -32,14 +32,14 @@ cd /usr/local/share/adsb-wiki/readsb-install/git
 sed -i 's/librtlsdr0, librtlsdr-dev, //g' debian/control
 
 export DEB_BUILD_OPTIONS=noddebs
-if ! dpkg-buildpackage -b -Prtlsdr -ui -uc -us
+if ! dpkg-buildpackage --ignore-builtin-builddeps -b -Prtlsdr -ui -uc -us
 then
     echo "Something went wrong building the debian package, exiting!"
     exit 1
 fi
 
 echo "Installing the Package"
-if ! dpkg -i ../readsb_*.deb
+if ! dpkg --force-all -i ../readsb_*.deb
 then
     echo "Something went wrong installing the debian package, exiting!"
     exit 1
