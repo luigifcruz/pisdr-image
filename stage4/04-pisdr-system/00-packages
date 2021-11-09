@@ -9,3 +9,5 @@ libssl-dev
 
 libboost-dev
 python3-pytest
+pybind11-dev
+python3-pybind11
