@@ -2,3 +2,5 @@ libmp3lame-dev
 libshout3-dev
 libconfig++-dev
 libraspberrypi-dev
+libpulse-dev
+libfftw3-dev

@@ -11,6 +11,11 @@ fi
 cd RTLSDR-Airband
 export PLATFORM=armv7-generic
 export WITH_SOAPYSDR=1
-make install
+mkdir -p build
+cd build
+cmake -GNinja ..
+ninja install
 ldconfig
+cd ..
+rm -fr build
 EOF
