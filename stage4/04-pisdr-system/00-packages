@@ -6,6 +6,7 @@ git
 pkg-config
 re2c
 libssl-dev
+xterm
 
 libboost-dev
 python3-pytest
