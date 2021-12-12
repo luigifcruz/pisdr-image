@@ -8,7 +8,6 @@ libtool
 libfftw3-dev
 libusb-1.0-0-dev
 libusb-dev
-qt5-default
 qtbase5-dev
 qtchooser
 libqt5multimedia5-plugins

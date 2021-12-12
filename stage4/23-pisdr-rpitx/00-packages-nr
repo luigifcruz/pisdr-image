@@ -11,6 +11,6 @@ libmagickcore-6.q16-6
 libmagickcore-6.q16-6-extra
 libmagickwand-6.q16-6
 libnetpbm10
-libpng12-0
+libpng-dev
 libwmf0.2-7
 netpbm

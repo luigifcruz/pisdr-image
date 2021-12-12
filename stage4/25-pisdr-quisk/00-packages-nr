@@ -1,14 +1,9 @@
-python-wxgtk3.0
 python3-wxgtk4.0
 libfftw3-dev
 libasound2-dev
 portaudio19-dev
 libpulse-dev
-libpython2.7-dev
 libpython3-dev
-python-usb
 python3-usb
-python-setuptools
 python3-setuptools
-python-pip
 python3-pip

@@ -4,8 +4,6 @@ libfftw3-dev
 libgsl-dev
 libcppunit-dev
 libcomedi-dev
-libqt4-opengl-dev
-libqwt-dev
 libsdl1.2-dev
 libusb-1.0-0-dev
 libasound2-dev
@@ -19,6 +17,9 @@ libqwt-qt5-dev
 libqt5opengl5-dev
 libcodec2-dev
 libsndfile1-dev
+pybind11-dev
+gir1.2-gtk-3.0
+swig
 
 python3-numpy
 python3-mako
@@ -33,3 +34,5 @@ python3-scipy
 python3-pip
 python3-gi-cairo
 python3-matplotlib
+python3-pygccxml
+python3-pyqtgraph
