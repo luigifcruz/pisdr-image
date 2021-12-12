@@ -1,6 +1,7 @@
 vim
 tmux
 cmake
+ninja-build
 build-essential
 git
 pkg-config
