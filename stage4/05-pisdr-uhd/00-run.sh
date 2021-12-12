@@ -11,9 +11,9 @@ fi
 cd uhd/host
 mkdir -p build
 cd build
-cmake -DCMAKE_CXX_FLAGS:STRING="-march=armhf -Wno-psabi" \
-      -DCMAKE_C_FLAGS:STRING="-march=armhf -Wno-psabi" \
-      -DCMAKE_ASM_FLAGS:STRING="-march=armhf" \
+cmake -DCMAKE_CXX_FLAGS:STRING="-march=armv6-m -Wno-psabi" \
+      -DCMAKE_C_FLAGS:STRING="-march=armv6-m -Wno-psabi" \
+      -DCMAKE_ASM_FLAGS:STRING="-march=armv6-m" \
       -GNinja -DCMAKE_BUILD_TYPE=Release ../
 ninja install
 cp /usr/local/lib/uhd/utils/uhd-usrp.rules /etc/udev/rules.d/
