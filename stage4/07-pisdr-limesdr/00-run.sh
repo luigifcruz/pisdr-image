@@ -11,7 +11,9 @@ fi
 cd LimeSuite
 mkdir -p build
 cd build
-cmake -GNinja DCMAKE_CXX_FLAGS:STRING="-latomic -mfpu=neon" ..
+cmake -DCMAKE_CXX_FLAGS:STRING="-latomic -march=armv8-a -Wno-psabi" \
+      -DCMAKE_C_FLAGS:STRING="-latomic -march=armv8-a -Wno-psabi" \
+      -DENABLE_SIMD_FLAGS="foo" -GNinja -DCMAKE_BUILD_TYPE=Release ..
 ninja install
 ldconfig
 cd ..
