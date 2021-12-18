@@ -9,6 +9,8 @@ if [ ! -d "volk" ]; then
 fi
 
 cd volk
+arch
+cat ../cpu_features/CMakeLists.txt
 mkdir -p build
 cd build
 cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
