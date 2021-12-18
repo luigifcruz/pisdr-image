@@ -10,6 +10,7 @@ fi
 if hash hardlink 2>/dev/null; then
 	hardlink -t /usr/share/doc
 fi
+rm -fr /etc/ld.so.preload
 EOF
 
 if [ -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config" ]; then
