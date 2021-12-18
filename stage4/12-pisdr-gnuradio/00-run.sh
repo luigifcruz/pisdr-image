@@ -11,10 +11,7 @@ fi
 cd volk
 mkdir -p build
 cd build
-cmake -DCMAKE_CXX_FLAGS:STRING="-march=armv8-a -Wno-psabi" \
-      -DCMAKE_C_FLAGS:STRING="-march=armv8-a -Wno-psabi" \
-	  DCMAKE_ASM_FLAGS:STRING="-march=armv8-a -Wno-psabi" \
-	  -GNinja -DCMAKE_BUILD_TYPE=Release ..
+cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
 ninja install
 ldconfig
 cd ..
