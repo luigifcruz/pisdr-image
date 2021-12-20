@@ -10,7 +10,6 @@ fi
 if hash hardlink 2>/dev/null; then
 	hardlink -t /usr/share/doc
 fi
-rm -fr /etc/ld.so.preload
 EOF
 
 if [ -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config" ]; then
@@ -18,12 +17,6 @@ if [ -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config" ]; then
 fi
 
 rm -f "${ROOTFS_DIR}/usr/bin/qemu-arm-static"
-
-if [ "${USE_QEMU}" != "1" ]; then
-	if [ -e "${ROOTFS_DIR}/etc/ld.so.preload.disabled" ]; then
-		mv "${ROOTFS_DIR}/etc/ld.so.preload.disabled" "${ROOTFS_DIR}/etc/ld.so.preload"
-	fi
-fi
 
 rm -f "${ROOTFS_DIR}/etc/network/interfaces.dpkg-old"
 
