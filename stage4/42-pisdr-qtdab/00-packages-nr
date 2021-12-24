@@ -1,0 +1,13 @@
+qt5-qmake
+libsndfile1-dev
+qt5-default
+libfftw3-dev
+portaudio19-dev
+libusb-1.0-0-dev
+mesa-common-dev
+libgl1-mesa-dev
+libqt5opengl5-dev
+libsamplerate0-dev
+libqwt-qt5-dev
+qtbase5-dev
+libfaad-dev

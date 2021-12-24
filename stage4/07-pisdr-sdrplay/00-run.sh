@@ -16,4 +16,5 @@ sed -i 's/more sdrplay_license.txt//g' install_lib.sh
 sed -i 's/armv7l/armv8l/g' install_lib.sh
 printf "\ny\ny\ny\n" | ./install_lib.sh
 systemctl enable sdrplay
+ldconfig
 EOF
