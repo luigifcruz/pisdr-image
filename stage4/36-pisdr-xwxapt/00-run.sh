@@ -14,6 +14,7 @@ tar jxvf xwxapt-3.4.3.tar.bz2
 cd xwxapt-3.4.3
 ./autogen.sh
 ./configure
-make install -j$(nproc)
+make -j$(nproc)
+make install
 ldconfig
 EOF

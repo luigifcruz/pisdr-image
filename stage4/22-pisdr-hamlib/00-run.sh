@@ -12,5 +12,6 @@ cd Hamlib
 ./bootstrap
 ./configure --with-python-binding
 make -j$(nproc)
+make install
 ldconfig
 EOF

@@ -10,5 +10,6 @@ fi
 
 cd leansdr/src/apps
 make -j$(nproc)
+make install
 ldconfig
 EOF
