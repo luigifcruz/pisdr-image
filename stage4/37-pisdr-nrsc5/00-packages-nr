@@ -1,0 +1,5 @@
+autoconf
+libtool
+libao-dev
+libfftw3-dev
+libfaad-dev
