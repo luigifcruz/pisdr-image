@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=QtDAB
+Comment=QtDAB
+Icon=/home/pi/PiSDR/Software/qt-dab/dab-maxi/qt-dab.png
+Exec=qt-dab-4.11 
+Type=Application
+Encoding=UTF-8
+Terminal=true
+Categories=None;

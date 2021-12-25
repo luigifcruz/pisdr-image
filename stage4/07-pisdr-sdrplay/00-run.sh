@@ -8,6 +8,7 @@ if [ ! -d "sdrplay" ]; then
     mkdir -p sdrplay
 fi
 
+cd sdrplay
 wget https://www.sdrplay.com/software/SDRplay_RSP_API-ARM32-3.07.2.run
 chmod +x ./SDRplay_RSP_API-ARM32-3.07.2.run
 ./SDRplay_RSP_API-ARM32-3.07.2.run --check

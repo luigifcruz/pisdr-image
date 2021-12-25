@@ -8,7 +8,7 @@ if [ ! -d "xwxapt" ]; then
     mkdir -p xwxapt
 fi
 
-
+cd xwxapt
 wget http://www.qsl.net/5b4az/pkg/apt/xwxapt/xwxapt-3.4.3.tar.bz2
 tar jxvf xwxapt-3.4.3.tar.bz2
 cd xwxapt-3.4.3

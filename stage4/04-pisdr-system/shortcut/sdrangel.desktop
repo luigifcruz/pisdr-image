@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=SDR Angel
-Comment=SDR Angel
-Icon=/home/pi/PiSDR/Software/sdrangel/cmake/cpack/sdrangel_icon.svg
-Exec=sdrangel 
-Type=Application
-Encoding=UTF-8
-Terminal=true
-Categories=None;

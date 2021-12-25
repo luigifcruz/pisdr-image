@@ -1,5 +1,11 @@
 #!/bin/bash -e
 
+
+
+# Dont forget to update the desktop shortcut.
+
+
+
 on_chroot << EOF
 mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
