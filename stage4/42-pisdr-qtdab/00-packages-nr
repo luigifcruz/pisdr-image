@@ -1,6 +1,4 @@
-qt5-qmake
 libsndfile1-dev
-qt5-default
 libfftw3-dev
 portaudio19-dev
 libusb-1.0-0-dev
