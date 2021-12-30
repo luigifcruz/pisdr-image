@@ -8,5 +8,6 @@ if [ ! -d "FoxTelem" ]; then
     wget http://amsat.us/FoxTelem/linux/FoxTelem_1.11g2_linux.tar.gz
     tar -xvzf FoxTelem_1.11g2_linux.tar.gz
     mv FoxTelem_1.11g2_linux FoxTelem
+    rm FoxTelem_1.11g2_linux.tar.gz
 fi
 EOF

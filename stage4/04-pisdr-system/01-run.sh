@@ -7,6 +7,10 @@ install -v -o 1000 -g 1000 -m 755 shortcut/osc.desktop "${ROOTFS_DIR}/home/${FIR
 install -v -o 1000 -g 1000 -m 755 shortcut/qtdab.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/Desktop/"
 install -v -o 1000 -g 1000 -m 755 shortcut/sdrpp.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/Desktop/"
 install -v -o 1000 -g 1000 -m 755 shortcut/wsjtx.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/Desktop/"
+install -v -o 1000 -g 1000 -m 755 shortcut/inspectrum.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/Desktop/"
+install -v -o 1000 -g 1000 -m 755 shortcut/limesuite.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/Desktop/"
+install -v -o 1000 -g 1000 -m 755 shortcut/urh.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/Desktop/"
+install -v -o 1000 -g 1000 -m 755 shortcut/quisk.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/Desktop/"
 
 install -v -o 1000 -g 1000 -d "${ROOTFS_DIR}/usr/share/rpd-wallpaper/"
 install -v -o 1000 -g 1000 -m 755 wallpaper/kevin-quezada-lmt.jpg "${ROOTFS_DIR}/usr/share/rpd-wallpaper/"

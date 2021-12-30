@@ -36,6 +36,15 @@ List of pre-installed software:
 - [gpredict](https://github.com/csete/gpredict)
 - [EliasOenal/multimon-ng](https://github.com/EliasOenal/multimon-ng)
 - [pabr/leansdr](https://github.com/pabr/leansdr)
+- [QtDAB](https://github.com/JvanKatwijk/qt-dab)
+- [IIO Oscilloscope](https://github.com/analogdevicesinc/iio-oscilloscope)
+- [RTL-AIS](https://github.com/dgiardini/rtl-ais)
+- [Inspectrum](https://github.com/miek/inspectrum)
+- [WSJT-X](https://physics.princeton.edu/pulsar/k1jt/wsjtx.html)
+- [nrsc5](https://github.com/theori-io/nrsc5)
+- [xwxapt](https://www.qsl.net/5b4az/pkg/apt/xwxapt/xwxapt.html)
+- [GLRPT](https://github.com/dvdesolve/glrpt)
+- [SDR++](https://github.com/AlexandreRouma/SDRPlusPlus)
 
 ### Radios
 We currently support the following SDR:
@@ -50,6 +59,7 @@ We currently support the following SDR:
 - [Airspy HF+](https://airspy.com/airspy-hf-plus/)
 - [HackRF One](https://greatscottgadgets.com/hackrf/one/)
 - [USRP](https://www.ettus.com/products/)
+- [SDRplay](https://www.sdrplay.com/)
 
 ## Getting started
 
