@@ -25,7 +25,6 @@ List of pre-installed software:
 - [hamlib](https://hamlib.github.io/)
 - [VaporTrail](https://github.com/inguardians/VaporTrail)
 - [Universal Radio Hacker](https://github.com/jopohl/urh)
-- [dump1090](https://github.com/antirez/dump1090)
 - [FoxTelem](https://github.com/ac2cz/FoxTelem)
 - [Quisk](http://james.ahlstrom.name/quisk/)
 - [0xCoto/VIRGO](https://github.com/0xCoto/VIRGO)
@@ -36,6 +35,15 @@ List of pre-installed software:
 - [gpredict](https://github.com/csete/gpredict)
 - [EliasOenal/multimon-ng](https://github.com/EliasOenal/multimon-ng)
 - [pabr/leansdr](https://github.com/pabr/leansdr)
+- [QtDAB](https://github.com/JvanKatwijk/qt-dab)
+- [IIO Oscilloscope](https://github.com/analogdevicesinc/iio-oscilloscope)
+- [RTL-AIS](https://github.com/dgiardini/rtl-ais)
+- [Inspectrum](https://github.com/miek/inspectrum)
+- [WSJT-X](https://physics.princeton.edu/pulsar/k1jt/wsjtx.html)
+- [nrsc5](https://github.com/theori-io/nrsc5)
+- [xwxapt](https://www.qsl.net/5b4az/pkg/apt/xwxapt/xwxapt.html)
+- [GLRPT](https://github.com/dvdesolve/glrpt)
+- [SDR++](https://github.com/AlexandreRouma/SDRPlusPlus)
 
 ### Radios
 We currently support the following SDR:
@@ -50,6 +58,7 @@ We currently support the following SDR:
 - [Airspy HF+](https://airspy.com/airspy-hf-plus/)
 - [HackRF One](https://greatscottgadgets.com/hackrf/one/)
 - [USRP](https://www.ettus.com/products/)
+- [SDRplay](https://www.sdrplay.com/)
 
 ## Getting started
 
@@ -98,11 +107,17 @@ PiSDR Project was created and maintained since 2019 by [Luigi F. Cruz](https://l
 ### Donation
 Donations are welcome. This would help offset the development cost.
 - [Patreon](https://www.patreon.com/luigifcruz)
-- [Buy Me a Coffee](https://www.buymeacoffee.com/luigi)
 - [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TAA65AJMC7498&source=url)
 
 ### Support
 Feel free to hit me up on [Twitter](https://twitter.com/luigifcruz) or [Email](mailto:luigifcruz@gmail.com) if your question isn't answered by this documentation. If you found a bug, please, report it directly on [GitHub Issues](https://github.com/luigifreitas/pisdr-image/issues).
+
+### Hardware Sponsors
+- Airspy R2 and AirspyHF Discovery: Provided by [@lambdaprog](https://twitter.com/lambdaprog).
+- LimeSDR Mini, LimeSDR RFE, and LimeSDR USB: Provided by [MyriadRF](https://myriadrf.org/).
+- RTL-SDR and Airspy Mini: Provided by [@lucasteske](https://twitter.com/lucasteske).
+- SDRplay RSP1A: Provided by [SDRPlay](https://www.sdrplay.com/).
+- PlutoSDR: Provided by [Analog Devices](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm-pluto.html).
 
 ### License
 PiSDR is distributed by an [MIT license](https://raw.githubusercontent.com/luigifreitas/pisdr-image/master/LICENSE).
