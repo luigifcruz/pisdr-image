@@ -1,8 +1,15 @@
 vim
 tmux
 cmake
+ninja-build
 build-essential
 git
 pkg-config
 re2c
 libssl-dev
+xterm
+
+libboost-dev
+python3-pytest
+pybind11-dev
+python3-pybind11

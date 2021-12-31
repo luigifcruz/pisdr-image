@@ -98,7 +98,7 @@ fi
 
 if [ "${DEPLOY_ZIP}" == "1" ]; then
 	pushd "${STAGE_WORK_DIR}" > /dev/null
-	xz -c "$(basename "${IMG_FILE}")" > "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.img.xz"
+	xz -T16 -c "$(basename "${IMG_FILE}")" > "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.img.xz"
 	popd > /dev/null
 	rm -f "${DEPLOY_DIR}/${IMG_FILENAME}${IMG_SUFFIX}.img"
 else
