@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=IIO Oscilloscope
+Comment=IIO Oscilloscope
+Icon=/home/pi/PiSDR/Software/iio-oscilloscope/icons/osc.svg
+Exec=osc 
+Type=Application
+Encoding=UTF-8
+Terminal=true
+Categories=None;

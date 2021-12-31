@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=LimeSuite
+Comment=LimeSuite
+Icon=/home/pi/PiSDR/Radios/LimeSuite/Desktop/lime-suite-128.png
+Exec=LimeSuiteGUI 
+Type=Application
+Encoding=UTF-8
+Terminal=true
+Categories=None;

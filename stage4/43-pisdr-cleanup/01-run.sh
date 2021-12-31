@@ -8,6 +8,7 @@ chown pi:pi /lib/udev/rules.d/90-libiio.rules
 chown pi:pi /etc/udev/rules.d/53-hackrf.rules
 chown pi:pi /etc/udev/rules.d/uhd-usrp.rules
 chown pi:pi /etc/udev/rules.d/64-limesuite.rules
+chown pi:pi /etc/udev/rules.d/66-mirics.rules
 udevadm control --reload-rules
 udevadm trigger
 EOF

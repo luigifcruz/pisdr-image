@@ -10,6 +10,7 @@ fi
 
 cd gpredict
 bash autogen.sh
-make -j$(nproc) install
+make -j$(nproc)
+make install
 ldconfig
 EOF

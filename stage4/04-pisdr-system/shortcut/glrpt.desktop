@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=GLRPT
+Comment=GLRPT
+Icon=/home/pi/PiSDR/Software/glrpt/share/launcher/glrpt.svg
+Exec=glrpt 
+Type=Application
+Encoding=UTF-8
+Terminal=true
+Categories=None;

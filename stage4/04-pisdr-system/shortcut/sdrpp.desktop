@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SDR++
+Comment=SDR++
+Icon=/home/pi/PiSDR/Software/SDRPlusPlus/root/res/icons/sdrpp.png
+Exec=sdrpp 
+Type=Application
+Encoding=UTF-8
+Terminal=true
+Categories=None;

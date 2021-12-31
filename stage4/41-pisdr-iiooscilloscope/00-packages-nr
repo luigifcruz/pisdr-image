@@ -1,0 +1,16 @@
+libglib2.0-dev
+libgtk2.0-dev
+libgtkdatabox-dev
+libmatio-dev
+libfftw3-dev
+libxml2
+libxml2-dev
+bison
+flex
+libavahi-common-dev
+libavahi-client-dev
+libcurl4-openssl-dev
+libjansson-dev
+cmake
+libaio-dev
+libserialport-dev

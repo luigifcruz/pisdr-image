@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Universal Radio Hacker
+Comment=Universal Radio Hacker
+Icon=/home/pi/PiSDR/Software/urh/data/icons/appicon.svg
+Exec=urh 
+Type=Application
+Encoding=UTF-8
+Terminal=true
+Categories=None;
