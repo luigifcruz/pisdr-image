@@ -98,11 +98,17 @@ PiSDR Project was created and maintained since 2019 by [Luigi F. Cruz](https://l
 ### Donation
 Donations are welcome. This would help offset the development cost.
 - [Patreon](https://www.patreon.com/luigifcruz)
-- [Buy Me a Coffee](https://www.buymeacoffee.com/luigi)
 - [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TAA65AJMC7498&source=url)
 
 ### Support
 Feel free to hit me up on [Twitter](https://twitter.com/luigifcruz) or [Email](mailto:luigifcruz@gmail.com) if your question isn't answered by this documentation. If you found a bug, please, report it directly on [GitHub Issues](https://github.com/luigifreitas/pisdr-image/issues).
+
+### Hardware Sponsors
+- Airspy R2 and AirspyHF Discovery: Provided by [@lambdaprog](https://twitter.com/lambdaprog).
+- LimeSDR Mini, LimeSDR RFE, and LimeSDR USB: Provided by [MyriadRF](https://myriadrf.org/).
+- RTL-SDR and Airspy Mini: Provided by [@lucasteske](https://twitter.com/lucasteske).
+- SDRplay RSP1A: Provided by [SDRPlay](https://www.sdrplay.com/).
+- PlutoSDR: Provided by [Analog Devices](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm-pluto.html).
 
 ### License
 PiSDR is distributed by an [MIT license](https://raw.githubusercontent.com/luigifreitas/pisdr-image/master/LICENSE).
