@@ -11,7 +11,7 @@ fi
 cd volk
 mkdir -p build
 cd build
-cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
+cmake -GNinja -DVOLK_CPU_FEATURES=OFF -DCMAKE_BUILD_TYPE=Release ..
 ninja install
 ldconfig
 cd ..

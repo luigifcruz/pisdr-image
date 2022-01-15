@@ -24,6 +24,8 @@ s/^#?[[:blank:]]*PasswordAuthentication[[:blank:]]*yes[[:blank:]]*$/PasswordAuth
 fi
 
 on_chroot << EOF
+gcc -march=native -Q --help=target
+echo "++++++++++++++++++++++++++++++++++++"
 systemctl disable hwclock.sh
 systemctl disable nfs-common
 systemctl disable rpcbind

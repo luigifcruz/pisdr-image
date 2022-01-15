@@ -9,12 +9,12 @@ if [ ! -d "sdrplay" ]; then
 fi
 
 cd sdrplay
-wget https://www.sdrplay.com/software/SDRplay_RSP_API-ARM32-3.07.2.run
-chmod +x ./SDRplay_RSP_API-ARM32-3.07.2.run
-./SDRplay_RSP_API-ARM32-3.07.2.run --check
-./SDRplay_RSP_API-ARM32-3.07.2.run --noexec --target .
+wget https://www.sdrplay.com/software/SDRplay_RSP_API-ARM64-3.07.1.run
+chmod +x ./SDRplay_RSP_API-ARM64-3.07.1.run
+./SDRplay_RSP_API-ARM64-3.07.1.run --check
+./SDRplay_RSP_API-ARM64-3.07.1.run --noexec --target .
 sed -i 's/more sdrplay_license.txt//g' install_lib.sh
-sed -i 's/ARCH=\`uname -m\`/ARCH=armv7l/g' install_lib.sh
+sed -i 's/ARCH=\`uname -m\`/ARCH=arm64/g' install_lib.sh
 printf "\ny\ny\ny\n" | ./install_lib.sh
 systemctl enable sdrplay
 ldconfig

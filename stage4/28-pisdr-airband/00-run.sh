@@ -9,7 +9,7 @@ if [ ! -d "RTLSDR-Airband" ]; then
 fi
 
 cd RTLSDR-Airband
-export PLATFORM=armv7-generic
+export PLATFORM=armv8-generic
 export WITH_SOAPYSDR=1
 mkdir -p build
 cd build

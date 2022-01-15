@@ -11,7 +11,7 @@ fi
 cd nrsc5
 mkdir -p build
 cd build
-cmake -DUSE_NEON=OFF -DUSE_FAAD2=OFF -GNinja ..
+cmake -DUSE_NEON=ON -DUSE_FAAD2=OFF -GNinja ..
 ninja install
 ldconfig
 cd ..
