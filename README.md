@@ -104,11 +104,6 @@ Not all programs listed above will be listed on the desktop. Most of them requir
 ## About the project
 PiSDR Project was created and maintained since 2019 by [Luigi F. Cruz](https://luigi.ltd).
 
-### Donation
-Donations are welcome. This would help offset the development cost.
-- [Patreon](https://www.patreon.com/luigifcruz)
-- [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TAA65AJMC7498&source=url)
-
 ### Support
 Feel free to hit me up on [Twitter](https://twitter.com/luigifcruz) or [Email](mailto:luigifcruz@gmail.com) if your question isn't answered by this documentation. If you found a bug, please, report it directly on [GitHub Issues](https://github.com/luigifreitas/pisdr-image/issues).
 
