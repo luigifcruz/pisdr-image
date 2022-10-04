@@ -1,4 +1,4 @@
-# 🥧 PiSDR: The SDR Linux Distro for Your Pi (ARM32)
+# 🥧 PiSDR: The SDR Linux Distro for Your Pi
 #### Modified Raspbian image with the latest SDR software pre-installed and ready to go. Compatible with every Pi.
 
 [![Github All Downloads](https://img.shields.io/github/downloads/luigifreitas/pisdr-image/total)]()
