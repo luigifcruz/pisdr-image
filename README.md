@@ -101,6 +101,17 @@ The remote desktop can be accessed using any VNC client. The credentials are the
 #### Running Programs
 Not all programs listed above will be listed on the desktop. Most of them require to be launched from the terminal. Please, refer to the documentation of the program that you would like to use for launch instructions. The `README.md` files can also be accessed offline inside the `/home/pi/PiSDR` directory.
 
+## Advanced
+
+You can also choose to compile PiSDR on your own. However, be aware that this process can take several hours, depending on your hardware. It's important to note that standard x86 machines, such as those with Intel and AMD CPUs, will typically take much longer. This is because they have to emulate an ARM64 processor to compile everything. In contrast, machines with native ARM64 processors, like Apple Silicon and Ampere, will be significantly faster as they don't require emulation.
+
+This project uses docker to compile the images.
+
+#### macOS (Colima)
+```bash
+$ colima start --cpu 8 --cpu-type cortex-a72 --memory 14 --arch aarch64
+```
+
 ## About the project
 PiSDR Project was created and maintained since 2019 by [Luigi F. Cruz](https://luigi.ltd).
 
