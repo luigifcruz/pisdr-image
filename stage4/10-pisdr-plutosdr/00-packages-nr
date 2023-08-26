@@ -6,3 +6,4 @@ libaio-dev
 libusb-1.0-0-dev
 libserialport-dev
 libavahi-client-dev
+libzstd-dev

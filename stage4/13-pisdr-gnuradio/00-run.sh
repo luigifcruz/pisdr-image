@@ -5,7 +5,7 @@ mkdir -p 	"/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "volk" ]; then
-	git clone --single-branch --branch v2.5.0 --depth 1 --recurse-submodules --shallow-submodules https://github.com/gnuradio/volk.git
+	git clone --single-branch --branch v3.0.0 --depth 1 --recurse-submodules --shallow-submodules https://github.com/gnuradio/volk.git
 fi
 
 cd volk

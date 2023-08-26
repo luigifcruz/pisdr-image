@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "sdrangel" ]; then
-    git clone --depth 1 --branch v6.5.5 https://github.com/f4exb/sdrangel.git
+    git clone --depth 1 --branch v7.15.3 https://github.com/f4exb/sdrangel.git
 fi
 
 cd sdrangel
