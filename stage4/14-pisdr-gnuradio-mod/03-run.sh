@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "gr-sdrplay3" ]; then
-    git clone --single-branch --branch master --depth 1 https://github.com/fventuri/gr-sdrplay3.git
+    git clone --single-branch --branch main --depth 1 https://github.com/fventuri/gr-sdrplay3.git
 fi
 
 cd gr-sdrplay3

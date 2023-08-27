@@ -8,7 +8,7 @@ if [ ! -d "rtl-sdr" ]; then
     git clone --depth 1 https://github.com/rtlsdrblog/rtl-sdr-blog.git
 fi
 
-cd rtl-sdr
+cd rtl-sdr-blog
 mkdir -p build
 cd build
 cmake -GNinja -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON ..
