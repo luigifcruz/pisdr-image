@@ -1,8 +1,5 @@
 #!/bin/bash -e
 
-# gr-limesdr doesn't have a stable package for GR3.10
-exit
-
 on_chroot << EOF
 mkdir -p 	"/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
