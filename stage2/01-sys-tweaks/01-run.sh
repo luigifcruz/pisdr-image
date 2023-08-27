@@ -24,8 +24,6 @@ s/^#?[[:blank:]]*PasswordAuthentication[[:blank:]]*yes[[:blank:]]*$/PasswordAuth
 fi
 
 on_chroot << EOF
-gcc -march=native -Q --help=target
-echo "++++++++++++++++++++++++++++++++++++"
 systemctl disable hwclock.sh
 systemctl disable nfs-common
 systemctl disable rpcbind
@@ -54,10 +52,14 @@ on_chroot <<EOF
 for GRP in input spi i2c gpio; do
 	groupadd -f -r "\$GRP"
 done
-for GRP in adm dialout cdrom audio users sudo video games plugdev input gpio spi i2c netdev; do
+for GRP in adm dialout cdrom audio users sudo video games plugdev input gpio spi i2c netdev render; do
   adduser $FIRST_USER_NAME \$GRP
 done
 EOF
+
+if [ -f "${ROOTFS_DIR}/etc/sudoers.d/010_pi-nopasswd" ]; then
+  sed -i "s/^pi /$FIRST_USER_NAME /" "${ROOTFS_DIR}/etc/sudoers.d/010_pi-nopasswd"
+fi
 
 on_chroot << EOF
 setupcon --force --save-only -v

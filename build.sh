@@ -14,20 +14,14 @@ $(cat "${i}-debconf")
 SELEOF
 EOF
 
-		log "End ${SUB_STAGE_DIR}/${i}-debconf"
+			log "End ${SUB_STAGE_DIR}/${i}-debconf"
 		fi
 		if [ -f "${i}-packages-nr" ]; then
 			log "Begin ${SUB_STAGE_DIR}/${i}-packages-nr"
 			PACKAGES="$(sed -f "${SCRIPT_DIR}/remove-comments.sed" < "${i}-packages-nr")"
 			if [ -n "$PACKAGES" ]; then
 				on_chroot << EOF
-n=0
-until [ "$n" -ge 5 ]
-do
-    apt-get --ignore-missing --fix-missing install --no-install-recommends -y $PACKAGES && break
-    n=$((n+1))
-    sleep 15
-done
+apt-get -o Acquire::Retries=3 install --no-install-recommends -y $PACKAGES
 EOF
 				if [ "${USE_QCOW2}" = "1" ]; then
 					on_chroot << EOF
@@ -42,13 +36,7 @@ EOF
 			PACKAGES="$(sed -f "${SCRIPT_DIR}/remove-comments.sed" < "${i}-packages")"
 			if [ -n "$PACKAGES" ]; then
 				on_chroot << EOF
-n=0
-until [ "$n" -ge 5 ]
-do
-    apt-get --ignore-missing --fix-missing install -y $PACKAGES && break
-    n=$((n+1))
-    sleep 15
-done
+apt-get -o Acquire::Retries=3 install -y $PACKAGES
 EOF
 				if [ "${USE_QCOW2}" = "1" ]; then
 					on_chroot << EOF
@@ -145,7 +133,7 @@ run_stage(){
 		done
 	fi
 
-	if [ "${USE_QCOW2}" = "1" ]; then 
+	if [ "${USE_QCOW2}" = "1" ]; then
 		unload_qimage
 	else
 		# make sure we are not umounting during export-image stage
@@ -167,6 +155,14 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [[ $BASE_DIR = *" "* ]]; then
+	echo "There is a space in the base path of pi-gen"
+	echo "This is not a valid setup supported by debootstrap."
+	echo "Please remove the spaces, or move pi-gen directory to a base path without spaces" 1>&2
+	exit 1
+fi
+
 export BASE_DIR
 
 if [ -f config ]; then
@@ -207,19 +203,30 @@ fi
 export USE_QEMU="${USE_QEMU:-0}"
 export IMG_DATE="${IMG_DATE:-"$(date +%Y-%m-%d)"}"
 export IMG_FILENAME="${IMG_FILENAME:-"${IMG_DATE}-${IMG_NAME}"}"
-export ZIP_FILENAME="${ZIP_FILENAME:-"${IMG_DATE}-${IMG_NAME}"}"
+export ARCHIVE_FILENAME="${ARCHIVE_FILENAME:-"image_${IMG_DATE}-${IMG_NAME}"}"
 
 export SCRIPT_DIR="${BASE_DIR}/scripts"
-export WORK_DIR="${WORK_DIR:-"${BASE_DIR}/work/${IMG_DATE}-${IMG_NAME}"}"
+export WORK_DIR="${WORK_DIR:-"${BASE_DIR}/work/${IMG_NAME}"}"
 export DEPLOY_DIR=${DEPLOY_DIR:-"${BASE_DIR}/deploy"}
-export DEPLOY_ZIP="${DEPLOY_ZIP:-1}"
+
+# DEPLOY_ZIP was deprecated in favor of DEPLOY_COMPRESSION
+# This preserve the old behavior with DEPLOY_ZIP=0 where no archive was created
+if [ -z "${DEPLOY_COMPRESSION}" ] && [ "${DEPLOY_ZIP:-1}" = "0" ]; then
+	echo "DEPLOY_ZIP has been deprecated in favor of DEPLOY_COMPRESSION"
+	echo "Similar behavior to DEPLOY_ZIP=0 can be obtained with DEPLOY_COMPRESSION=none"
+	echo "Please update your config file"
+	DEPLOY_COMPRESSION=none
+fi
+export DEPLOY_COMPRESSION=${DEPLOY_COMPRESSION:-zip}
+export COMPRESSION_LEVEL=${COMPRESSION_LEVEL:-6}
 export LOG_FILE="${WORK_DIR}/build.log"
 
 export TARGET_HOSTNAME=${TARGET_HOSTNAME:-raspberrypi}
 
 export FIRST_USER_NAME=${FIRST_USER_NAME:-pi}
-export FIRST_USER_PASS=${FIRST_USER_PASS:-raspberry}
-export RELEASE=${RELEASE:-bullseye}
+export FIRST_USER_PASS
+export DISABLE_FIRST_BOOT_USER_RENAME=${DISABLE_FIRST_BOOT_USER_RENAME:-0}
+export RELEASE=${RELEASE:-bullseye} # Don't forget to update stage0/prerun.sh
 export WPA_ESSID
 export WPA_PASSWORD
 export WPA_COUNTRY
@@ -276,12 +283,27 @@ fi
 
 export NO_PRERUN_QCOW2="${NO_PRERUN_QCOW2:-1}"
 
+if [ "$SETFCAP" != "1" ]; then
+	export CAPSH_ARG="--drop=cap_setfcap"
+fi
+
 dependencies_check "${BASE_DIR}/depends"
 
 #check username is valid
 if [[ ! "$FIRST_USER_NAME" =~ ^[a-z][-a-z0-9_]*$ ]]; then
 	echo "Invalid FIRST_USER_NAME: $FIRST_USER_NAME"
 	exit 1
+fi
+
+if [[ "$DISABLE_FIRST_BOOT_USER_RENAME" == "1" ]] && [ -z "${FIRST_USER_PASS}" ]; then
+	echo "To disable user rename on first boot, FIRST_USER_PASS needs to be set"
+	echo "Not setting FIRST_USER_PASS makes your system vulnerable and open to cyberattacks"
+	exit 1
+fi
+
+if [[ "$DISABLE_FIRST_BOOT_USER_RENAME" == "1" ]]; then
+	echo "User rename on the first boot is disabled"
+	echo "Be advised of the security risks linked to shipping a device with default username/password set."
 fi
 
 if [[ -n "${APT_PROXY}" ]] && ! curl --silent "${APT_PROXY}" >/dev/null ; then
@@ -381,7 +403,7 @@ for EXPORT_DIR in ${EXPORT_DIRS}; do
 
 	else
 		run_stage
-	fi 
+	fi
 	if [ "${USE_QEMU}" != "1" ]; then
 		if [ -e "${EXPORT_DIR}/EXPORT_NOOBS" ]; then
 			# shellcheck source=/dev/null
