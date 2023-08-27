@@ -11,7 +11,7 @@ fi
 cd sdrangel
 mkdir -p build
 cd build
-cmake -GNinja ..
+cmake -DSOAPYSDR_DIR=/usr/local -GNinja ..
 ninja install
 ldconfig
 cd ..

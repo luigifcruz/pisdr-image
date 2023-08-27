@@ -5,11 +5,11 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "codec2" ]; then
-    git clone https://github.com/drowe67/codec2.git
+    git clone https://github.com/drowe67/codec2-dev.git codec2
 fi
 
 cd codec2
-git reset --hard 76a20416d715ee06f8b36a9953506876689a3bd2
+git reset --hard "v1.0.3"
 mkdir -p build
 cd build
 cmake -GNinja ..

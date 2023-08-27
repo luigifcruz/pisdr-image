@@ -13,7 +13,7 @@ git reset --hard c0e92b92aca3d1d36c990b642b937c64d363c559
 mkdir -p build
 cd build
 cmake -GNinja ..
-ninja
+ninja install
 ldconfig
 cd ..
 rm -fr build
