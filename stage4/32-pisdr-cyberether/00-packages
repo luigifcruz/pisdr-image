@@ -1,0 +1,12 @@
+git 
+build-essential 
+cmake 
+pkg-config 
+ninja-build 
+meson
+mesa-vulkan-drivers 
+libvulkan-dev 
+spirv-cross 
+glslang-tools 
+libglfw3-dev
+libfftw3-dev

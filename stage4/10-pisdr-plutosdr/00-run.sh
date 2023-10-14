@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 
 if [ ! -d "libiio" ]; then
-    git clone --depth 1 https://github.com/analogdevicesinc/libiio
+    git clone --depth 1 --branch libiio-v0 https://github.com/analogdevicesinc/libiio
 fi
 
 cd libiio

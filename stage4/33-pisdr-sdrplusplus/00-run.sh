@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Software"
 
 if [ ! -d "SDRPlusPlus" ]; then
-    git clone --single-branch --branch 1.0.4 --depth 1 https://github.com/AlexandreRouma/SDRPlusPlus.git
+    git clone --single-branch --branch master --depth 1 https://github.com/AlexandreRouma/SDRPlusPlus.git
 fi
 
 cd SDRPlusPlus

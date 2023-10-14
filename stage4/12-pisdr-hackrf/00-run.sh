@@ -5,7 +5,7 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 
 if [ ! -d "hackrf" ]; then
-    git clone https://github.com/mossmann/hackrf.git
+    git clone --depth 1 https://github.com/mossmann/hackrf.git
 fi
 
 cd hackrf/host

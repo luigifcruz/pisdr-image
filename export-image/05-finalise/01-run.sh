@@ -3,7 +3,10 @@
 IMG_FILE="${STAGE_WORK_DIR}/${IMG_FILENAME}${IMG_SUFFIX}.img"
 INFO_FILE="${STAGE_WORK_DIR}/${IMG_FILENAME}${IMG_SUFFIX}.info"
 
+sed -i 's/^update_initramfs=.*/update_initramfs=all/' "${ROOTFS_DIR}/etc/initramfs-tools/update-initramfs.conf"
+
 on_chroot << EOF
+update-initramfs -u
 if [ -x /etc/init.d/fake-hwclock ]; then
 	/etc/init.d/fake-hwclock stop
 fi
@@ -17,6 +20,12 @@ if [ -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config" ]; then
 fi
 
 rm -f "${ROOTFS_DIR}/usr/bin/qemu-arm-static"
+
+if [ "${USE_QEMU}" != "1" ]; then
+	if [ -e "${ROOTFS_DIR}/etc/ld.so.preload.disabled" ]; then
+		mv "${ROOTFS_DIR}/etc/ld.so.preload.disabled" "${ROOTFS_DIR}/etc/ld.so.preload"
+	fi
+fi
 
 rm -f "${ROOTFS_DIR}/etc/network/interfaces.dpkg-old"
 
@@ -47,7 +56,7 @@ rm -f "${ROOTFS_DIR}/root/.vnc/private.key"
 rm -f "${ROOTFS_DIR}/etc/vnc/updateid"
 
 update_issue "$(basename "${EXPORT_DIR}")"
-install -m 644 "${ROOTFS_DIR}/etc/rpi-issue" "${ROOTFS_DIR}/boot/issue.txt"
+install -m 644 "${ROOTFS_DIR}/etc/rpi-issue" "${ROOTFS_DIR}/boot/firmware/issue.txt"
 
 cp "$ROOTFS_DIR/etc/rpi-issue" "$INFO_FILE"
 
@@ -72,9 +81,8 @@ cp "$ROOTFS_DIR/etc/rpi-issue" "$INFO_FILE"
 
 mkdir -p "${DEPLOY_DIR}"
 
-rm -f "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.zip"
+rm -f "${DEPLOY_DIR}/${ARCHIVE_FILENAME}${IMG_SUFFIX}.*"
 rm -f "${DEPLOY_DIR}/${IMG_FILENAME}${IMG_SUFFIX}.img"
-rm -f "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.img.xz"
 
 mv "$INFO_FILE" "$DEPLOY_DIR/"
 
@@ -90,11 +98,22 @@ else
 	make_bootable_image "${STAGE_WORK_DIR}/${IMG_FILENAME}${IMG_SUFFIX}.qcow2" "$IMG_FILE"
 fi
 
-if [ "${DEPLOY_ZIP}" == "1" ]; then
+case "${DEPLOY_COMPRESSION}" in
+zip)
 	pushd "${STAGE_WORK_DIR}" > /dev/null
-	xz -T16 -c "$(basename "${IMG_FILE}")" > "${DEPLOY_DIR}/${ZIP_FILENAME}${IMG_SUFFIX}.img.xz"
+	zip -"${COMPRESSION_LEVEL}" \
+	"${DEPLOY_DIR}/${ARCHIVE_FILENAME}${IMG_SUFFIX}.zip" "$(basename "${IMG_FILE}")"
 	popd > /dev/null
-	rm -f "${DEPLOY_DIR}/${IMG_FILENAME}${IMG_SUFFIX}.img"
-else
-	mv "$IMG_FILE" "$DEPLOY_DIR/"
-fi
+	;;
+gz)
+	pigz --force -"${COMPRESSION_LEVEL}" "$IMG_FILE" --stdout > \
+	"${DEPLOY_DIR}/${ARCHIVE_FILENAME}${IMG_SUFFIX}.img.gz"
+	;;
+xz)
+	xz --compress --force --threads 0 --memlimit-compress=50% -"${COMPRESSION_LEVEL}" \
+	--stdout "$IMG_FILE" > "${DEPLOY_DIR}/${ARCHIVE_FILENAME}${IMG_SUFFIX}.img.xz"
+	;;
+none | *)
+	cp "$IMG_FILE" "$DEPLOY_DIR/"
+;;
+esac

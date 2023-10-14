@@ -5,10 +5,10 @@ mkdir -p    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 cd 		    "/home/${FIRST_USER_NAME}/PiSDR/Radios"
 
 if [ ! -d "rtl-sdr" ]; then
-    git clone --depth 1 https://github.com/osmocom/rtl-sdr
+    git clone --depth 1 https://github.com/rtlsdrblog/rtl-sdr-blog.git
 fi
 
-cd rtl-sdr
+cd rtl-sdr-blog
 mkdir -p build
 cd build
 cmake -GNinja -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON ..

@@ -41,3 +41,12 @@ libavcodec-dev
 libavformat-dev
 libopus-dev
 graphviz
+libqt5texttospeech5-dev
+zlib1g-dev
+libfaad-dev
+libqt5gamepad5-dev
+qtbase5-private-dev
+qtwebengine5-dev
+qml-module-qtquick-controls2
+libspeexdsp-dev
+libsamplerate0-dev
