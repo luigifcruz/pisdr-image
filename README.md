@@ -25,7 +25,6 @@ List of pre-installed software:
 - [hamlib](https://hamlib.github.io/)
 - [VaporTrail](https://github.com/inguardians/VaporTrail)
 - [Universal Radio Hacker](https://github.com/jopohl/urh)
-- [FoxTelem](https://github.com/ac2cz/FoxTelem)
 - [Quisk](http://james.ahlstrom.name/quisk/)
 - [0xCoto/VIRGO](https://github.com/0xCoto/VIRGO)
 - [0xCoto/CygnusRFI](https://github.com/0xCoto/CygnusRFI)
